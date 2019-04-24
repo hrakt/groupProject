@@ -36,6 +36,31 @@ router.post('/register', async(req,res)=>{
     } catch(err){
       res.send(err)
     }
+});
+
+router.post('/login', async(req,res)=>{
+    try{
+        const foundUser = await User.findOne({"email": req.body.email});
+
+        if(foundUser){
+            if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
+                req.session.logged       = true;
+                req.session.usersDbId    = foundUser._id;
+
+                console.log(req.session, ' succesfull login everyone');
+                res.redirect('/users');
+            }
+            else{
+                console.log('not a user, make sure you enter correct login info');
+                res.redirect('/auth/login');
+            }
+        }else{
+            console.log('not a user, make sure you enter correct login info');
+            res.redirect('/auth/login');
+        }
+    }catch(err){
+        res.send(err);
+    }
 })
 
 module.exports = router;
