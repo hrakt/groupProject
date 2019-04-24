@@ -43,17 +43,24 @@ router.post('/login', async(req,res)=>{
     try{
         const foundUser = await User.findOne({"email": req.body.email});
 
+        
         if(foundUser){
-            if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
-                req.session.logged       = true;
-                req.session.usersDbId    = foundUser._id;
+            if(foundUser.email == "admin" && bcrypt.compareSync(req.body.password, foundUser.password)){
+                console.log('im hitting here')
+                res.redirect('/events/add')
 
-                console.log(foundUser, "=========");
-                res.redirect(`/users/${foundUser._id}`);
-            }
-            else{
-                console.log('not a user, make sure you enter correct login info');
-                res.redirect('/auth/login');
+            }else{
+                if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
+                    req.session.logged       = true;
+                    req.session.usersDbId    = foundUser._id;
+    
+                    console.log(foundUser, "=========");
+                    res.redirect(`/users/${foundUser._id}`);
+                }
+                else{
+                    console.log('not a user, make sure you enter correct login info');
+                    res.redirect('/auth/login');
+                }
             }
         }else{
             console.log('not a user, make sure you enter correct login info');
