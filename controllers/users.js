@@ -3,11 +3,11 @@ const router    = express.Router();
 const Users     = require('../models/users');
 
 
-router.get('/' , async(req,res) =>{
+router.get('/:id' , async(req,res) =>{
     try{
-        // const foundUser = await Users.find({});
+        const foundUser = await Users.findById(req.params.id);
         res.render('users/index.ejs',{
-            // users : foundUsers
+            user : foundUser
         });
     }catch(err){
         console.log('error happening')
