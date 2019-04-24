@@ -1,6 +1,12 @@
-<%- include('../çpartials/header.ejs')%>
+<%- include('../partials/header.ejs')%>
 
     <h1>Event Index Page</h1>
-    
+    <% for(let i = 0;i<events.length;i++){%>
+        <form action="/users/index" method="POST">
+        <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
+            <button>Add Event</button>
+        </form>
+
+    <%}%>
 
 <%- include('../partials/footer.ejs')%>
