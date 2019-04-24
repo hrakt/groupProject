@@ -32,7 +32,7 @@ router.post('/register', async(req,res)=>{
         console.log(createdUser);
     
         // res.send('you registered');
-        res.redirect('/users')
+        res.redirect(`/users/${createdUser._id}`)
 
     } catch(err){
         res.send(err)
