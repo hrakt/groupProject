@@ -32,7 +32,7 @@ router.post('/register', async(req,res)=>{
         console.log(createdUser);
     
         // res.send('you registered');
-        res.redirect('/users')
+        res.redirect(`/users/${createdUser._id}`)
 
     } catch(err){
         res.send(err)
@@ -48,8 +48,8 @@ router.post('/login', async(req,res)=>{
                 req.session.logged       = true;
                 req.session.usersDbId    = foundUser._id;
 
-                console.log(req.session, ' succesfull login everyone');
-                res.redirect('/users');
+                console.log(foundUser, "=========");
+                res.redirect(`/users/${foundUser._id}`);
             }
             else{
                 console.log('not a user, make sure you enter correct login info');
@@ -69,7 +69,7 @@ router.get('/logout', (req, res) => {
         if(err){
             res.send(err);
         } else {
-            res.redirect('/auth/login');
+            res.redirect('/auth/login')
         }
     })
 })

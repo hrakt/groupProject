@@ -1,6 +1,9 @@
 <%- include('../partials/header.ejs')%>
 
-    <h1>User Index</h1>
+    <h1>User Index</h1><br/>
+    <h3>Hey, <%=user.firstName%>!</h3><br/>
+    <a href="../events/index.ejs"><button>Add an event</button></a><br/>
+
     <a href="/auth/logout">Logout</a>
 
 <%- include('../partials/footer.ejs')%>
