@@ -26,15 +26,16 @@ router.post('/register', async(req,res)=>{
     userDbEntry.firstName   = req.body.firstName;
     userDbEntry.lastName    = req.body.lastName;
     userDbEntry.password    = passwordHash;
-  
+
     try {
-      const createdUser = await User.create(userDbEntry);
-      console.log(createdUser);
-  
-      res.send('you registered');
-  
+        const createdUser = await User.create(userDbEntry);
+        console.log(createdUser);
+    
+        // res.send('you registered');
+        res.redirect('/users')
+
     } catch(err){
-      res.send(err)
+        res.send(err)
     }
 });
 
@@ -61,6 +62,16 @@ router.post('/login', async(req,res)=>{
     }catch(err){
         res.send(err);
     }
+})
+
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if(err){
+            res.send(err);
+        } else {
+            res.redirect('/auth/login');
+        }
+    })
 })
 
 module.exports = router;
