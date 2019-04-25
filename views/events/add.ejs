@@ -9,6 +9,10 @@
         <input type="text" name="picture" placeholder="Picture"> <br/>
         <button type="submit">Create</button>
     </form>
-
-
+    <section>
+    <h2> List of all Events</h2>
+        <% for(let i = 0;i<events.length;i++){%>
+        <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
+            <%}%>
+    </section>
 <%- include('../partials/footer.ejs')%>
