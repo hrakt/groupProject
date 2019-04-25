@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs')%>
 
     <h1>Event Add Page</h1>
-     <form action="/events/add" method="POST">
+    <form action="/events/add" method="POST">
         <input type="text" name="name" placeholder="Event Name"> <br/>
         <input type="text" name="artists" placeholder="Artist"> <br/>
         <input type="text" name="date" placeholder="Date"> <br/>
@@ -18,5 +18,6 @@
               <input type="submit" value="Delete Event"/>
           </form>
             <%}%>
-    </section>
+    </section><br/>
+    <a href="/auth/logout">Logout of Admin</a>
 <%- include('../partials/footer.ejs')%>

@@ -2,15 +2,21 @@
 
     <h1>Event Index Page</h1>
 
+
+
+
     <% for(let i = 0;i<events.length;i++){%>
 
-        <p><%= user.events[0] %> this is the first</p>
-        <p><%= events[i]._id %> this is the second</p>
+
+
         <form action="/users/<%=events[i]._id%>" method="POST">
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
-            <%if(!user.events.includes(events[i]._id)){%>
-                <button>Add Event</button>
-            <%}%>
+               <% if (!user.events.filter(e => e.toString() === events[i]._id.toString()).length > 0) { %>
+                    <button>Add Event</button>
+        <% } %>
+                    
+
+
         </form>
 
     <%}%>
