@@ -61,7 +61,27 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+router.get('/:id/edit', async (req, res)=>{
+    try {
+    const foundEvents = await Events.findById(req.params.id);
+    res.render('events/edit.ejs', {
+      events: foundEvents
+    })
+    res.redirect('events/add')
+    } catch (err) {
+      res.send(err)
+    }
+  });
 
+router.put('/:id', async (req, res) => {
+    try{
+    const updatedEvent = await Events.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    console.log(updatedEvent + 'udpated event PUT')
+    res.redirect('/events/add')
+    } catch (err){
+        res.send(err)
+    }
+})
 
 
 router.post('/add', async(req,res)=>{
