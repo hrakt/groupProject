@@ -15,7 +15,7 @@ git <%- include('../partials/header.ejs')%>
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
 
         
-           <% if (user &&!user.events.filter(e => e.toString() === events[i]._id.toString()).length > 0) { %>
+        <% if (user &&!user.events.filter(e => e.toString() === events[i]._id.toString()).length > 0) { %>
                     <button>Add Event</button>
         <% } %>
                     

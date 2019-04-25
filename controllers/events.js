@@ -8,14 +8,13 @@ router.get('/add' , async(req,res) =>{
     try{
         const foundEvents = await Events.find({});
         res.render('events/add.ejs', {
-            events: foundEvents
+            events: foundEvents,
+            logged: req.session.logged
         });
     }catch(err){
         res.send(err);
     }
 });
-
-
 
 
 // const createdEvent = await Events.create(req.body);
@@ -42,7 +41,9 @@ router.get('/index', async(req,res)=>{
 
         res.render('events/index.ejs',{
             events: foundEvents,
-            user: foundUser}
+            user: foundUser,
+            logged: req.session.logged}
+
     )
     }catch(err){
         res.send(err);

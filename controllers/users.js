@@ -8,9 +8,11 @@ router.get('/:id' , async(req,res) =>{
     try{
         const foundUser     = await Users.findById(req.params.id).populate("events");
         const usersEvents   = await foundUser.events;
+        console.log(req.session.logged)
         res.render('users/index.ejs',{
             user : foundUser,
-            events: usersEvents
+            events: usersEvents,
+            logged: req.session.logged
         });
     }catch(err){
         console.log('error happening')

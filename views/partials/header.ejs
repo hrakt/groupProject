@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>TEAM PROJECT!!!!!!!!!!</title>
+        <title>TEAM PROJECT!!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
+    <% if(logged){%>
+        <nav>
+            <a href="/events/index">All Events</a>
+            <a href="/users/<%=user._id%>">My Account</a>
+            <a href="/auth/logout">Log Out</a>
+        </nav>
+    <%}%>

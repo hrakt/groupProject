@@ -5,7 +5,9 @@ const User      = require('../models/users');
 
 router.get('/login', (req, res) => {
     console.log('login in')
-    res.render('login.ejs')
+    res.render('login.ejs', {
+        logged: req.session.logged
+    })
 })
 
 router.get('/register', (req, res) => {
