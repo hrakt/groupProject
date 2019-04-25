@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs')%>
 
     <h1>Event Add Page</h1>
-     <form action="/events/add" method="POST">
+    <form action="/events/add" method="POST">
         <input type="text" name="name" placeholder="Event Name"> <br/>
         <input type="text" name="artists" placeholder="Artist"> <br/>
         <input type="text" name="date" placeholder="Date"> <br/>
@@ -14,5 +14,6 @@
         <% for(let i = 0;i<events.length;i++){%>
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
             <%}%>
-    </section>
+    </section><br/>
+    <a href="/auth/logout">Logout of Admin</a>
 <%- include('../partials/footer.ejs')%>

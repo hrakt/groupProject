@@ -1,5 +1,11 @@
 <%- include('../partials/header.ejs')%>
 
-    <h1>Event Show Page</h1>
+    <h1>Show Page for <%=events.name%></h1>
+    <ul>
+        <li>Lineup: <%=events.artists%></li>
+        <li>Date: <%=events.date%></li>
+        <li>Location: <%=events.venue%></li>
+        <li>Pictures: <%=events.picture%></li>
+    </ul>
 
 <%- include('../partials/footer.ejs')%>
