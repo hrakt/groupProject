@@ -4,6 +4,17 @@
     <h3>Hey, <%=user.firstName%>!</h3><br/>
     <a href="../events/index"><button>Add an event</button></a><br/>
 
+
+    <h2>User's Events</h2>
+    <ul>
+    <%for(let i=0;i<events.length;i++){%>
+        <li><%=events[i].name%></li>
+        <form action="/users/<%=events[i]._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    <%}%>
+    </ul>
+
     <a href="/auth/logout">Logout</a>
 
 <%- include('../partials/footer.ejs')%>

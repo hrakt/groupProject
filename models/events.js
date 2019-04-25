@@ -4,12 +4,12 @@ const Users = require('./users')
 const eventSchema = mongoose.Schema({
     name: String,
     artists: [{}],
-    date: Date,
+    date: String,
     venue: String,
     picture: String,
     users: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Users'
+        ref: 'User'
     }]
 })
 
