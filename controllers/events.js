@@ -6,11 +6,22 @@ const Users     = require('../models/users');
 
 router.get('/add' , async(req,res) =>{
     try{
-        res.render('events/add.ejs');
+        const foundEvents = await Events.find({});
+        res.render('events/add.ejs', {
+            events: foundEvents
+        });
     }catch(err){
         res.send(err);
     }
 });
+
+
+// const createdEvent = await Events.create(req.body);
+// console.log(createdEvent);
+// res.render('events/add.ejs') 
+//     events: createdEvent
+//     console.log(`==================== ${events}`)
+// res.redirect('/events/add')
 
 router.get('/index', async(req,res)=>{
     try{
@@ -26,9 +37,14 @@ router.get('/index', async(req,res)=>{
 })
 
 router.post('/add', async(req,res)=>{
+    try {
     const createdEvent = await Events.create(req.body);
     console.log(createdEvent);
     res.redirect('/events/add')
+    } catch(err){
+        res.send(err);
+    }
+    
 });
 
 
