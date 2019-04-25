@@ -15,7 +15,7 @@
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a><br />
         <a href="/events/<%=events[i]._id%>/edit"><button>Edit</button></a><br />
          <section>
-          <form action="/users/<%=events[i]._id%>?_method=DELETE" method="post">
+          <form action="/events/<%=events[i]._id%>?_method=DELETE" method="POST">
               <input type="submit" value="Delete Event"/>
           </form>
             <%}%>
