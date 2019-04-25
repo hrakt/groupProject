@@ -28,7 +28,7 @@ router.get('/index', async(req,res)=>{
 router.post('/add', async(req,res)=>{
     const createdEvent = await Events.create(req.body);
     console.log(createdEvent);
-    res.redirect('/events')
+    res.redirect('/events/add')
 });
 
 
