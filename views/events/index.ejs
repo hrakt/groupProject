@@ -3,7 +3,9 @@
     <h1>Event Index Page</h1>
 
 
-
+    <% if(events.length<=0){%>
+            <p>There are currently no events available</p>
+    <%}%>
 
     <% for(let i = 0;i<events.length;i++){%>
 
@@ -11,12 +13,8 @@
 
         <form action="/users/<%=events[i]._id%>" method="POST">
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
-               <% if (!user.events.filter(e => e.toString() === events[i]._id.toString()).length > 0) { %>
                     <button>Add Event</button>
-        <% } %>
-                    
-
-
+        
         </form>
 
     <%}%>
