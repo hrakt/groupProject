@@ -7,8 +7,10 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
+    <% if(logged){%>
         <nav>
             <a href="/events/index">All Events</a>
-            <a href="/users/index">My Account</a>
+            <a href="/users/<%=user._id%>">My Account</a>
             <a href="/auth/logout">Log Out</a>
         </nav>
+    <%}%>
