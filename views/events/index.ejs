@@ -4,11 +4,18 @@
 
     <% for(let i = 0;i<events.length;i++){%>
 
-        <p><%= user.events[0] %> this is the first</p>
-        <p><%= events[i]._id %> this is the second</p>
+
+
+
+
+
+
+
+
+
         <form action="/users/<%=events[i]._id%>" method="POST">
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
-            <%if(!user.events.includes(events[i]._id)){%>
+            <%if(!user.events[i].equals(events[i]._id)){%>
                 <button>Add Event</button>
             <%}%>
         </form>
