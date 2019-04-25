@@ -75,12 +75,18 @@ router.post('/add', async(req,res)=>{
     
 });
 
-router.delete('/add', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-        const deletedEvent = await Events.findByIdAndRemove(req.params.id);
-        const foundUser = await Events.findOne({'events': req.params.id})
-        foundUser.events.remove(req.params.id);
-        foundUser.save();
+        const deleteEvent      = await Events.findByIdAndRemove(req.params.id);
+        console.log(deleteEvent._id,"<----- this is deleted events id")
+        const findAllUsers     = await Users.find({'events': req.params.id})
+        console.log(findAllUsers)
+        findAllUsers.forEach(u => {
+            u.events.remove(req.params.id)
+            u.save()
+        })
+        // foundUser.events.remove(req.params.id);
+        // foundUser.save();
         res.redirect('/events/add');
     } catch (err){
         res.send(err);
