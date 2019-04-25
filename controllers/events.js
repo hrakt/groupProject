@@ -36,6 +36,17 @@ router.get('/index', async(req,res)=>{
     }
 })
 
+router.get('/:id', async (req, res) => {
+    try{
+        const foundEvents = await Events.findById(req.params.id);
+        res.render('events/show.ejs', {
+            events: foundEvents
+        })
+    }catch(err){
+        res.send(err);
+    }
+})
+
 router.post('/add', async(req,res)=>{
     try {
     const createdEvent = await Events.create(req.body);
