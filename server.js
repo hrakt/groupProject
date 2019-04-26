@@ -24,6 +24,8 @@ app.use(session({
 app.use('/assets', express.static('assets'))
 
 
+
+
 app.get('/', (req, res) => {
     res.render('home.ejs', {
         logged: req.session.logged
@@ -31,13 +33,22 @@ app.get('/', (req, res) => {
     
 })
 
+
 app.use('/users', userController);
 app.use('/events', eventController);
 app.use('/auth', authController);
 
+app.get('/', (req, res) => {
+    res.render('home.ejs');
+})
+
 app.get("*", (req, res) => {
     res.send('page not found')
 })
+
+
+
+
 
 app.listen(PORT, () => {
     console.log('listening...on port ', PORT);
