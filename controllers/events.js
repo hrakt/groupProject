@@ -68,7 +68,7 @@ router.get('/:id/edit', async (req, res)=>{
     res.render('events/edit.ejs', {
       events: foundEvents
     })
-    res.redirect('events/add')
+    // res.redirect('events/add')
     } catch (err) {
       res.send(err)
     }
@@ -77,7 +77,7 @@ router.get('/:id/edit', async (req, res)=>{
 router.put('/:id', async (req, res) => {
     try{
     const updatedEvent = await Events.findByIdAndUpdate(req.params.id, req.body, {new: true});
-    console.log(updatedEvent + 'udpated event PUT')
+    console.log(updatedEvent + 'updated event PUT')
     res.redirect('/events/add')
     } catch (err){
         res.send(err)
