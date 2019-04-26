@@ -32,6 +32,7 @@ app.use('/auth', authController);
 app.get("*", (req, res) => {
     res.send('page not found')
 })
+app.use('/assets', express.static('assets'))
 
 app.listen(PORT, () => {
     console.log('listening...on port ', PORT);
