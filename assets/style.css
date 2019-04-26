@@ -1,27 +1,63 @@
-.register {
-    /* font-family: 'Ohno Blazeface', sans-serif;
-    font-weight: 700; */
-    color: white;
+.register-container {
+    text-align: center;
+    background-color: white;
+    font-family: 'Montserrat', san-serif;
+    font-weight: 400;
+    /* border: 1px solid red; */
 }
 
-body {
-    background-color: limegreen;
+.register{
+    justify-content: center;
+    font-size: 30px;
+    display: flex;
+    /* border: 1px solid green; */
 }
+
+.register-box{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 0 auto;
+    
+}
+
+input {
+    height: 37px;
+    outline: none;
+}
+
+button {
+    border-radius: 30px;
+    height: 50px;
+    width: 200px !important;
+    font-size: 16px;
+    margin: auto;
+}
+
+button:hover {
+    background-color: #0DF205;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+/* body {
+    background-color: limegreen;
+} */
 
 .about-app-para {
     color: blue;
     /* The image used */
     background-image: url("../assets/photos/about-app-hero1.jpg");
-  
+
     /* Set a specific height */
     min-height: 500px; 
-  
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
 .one-stop {
     min-height: 200px;
