@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 .register {
     /* font-family: 'Ohno Blazeface', sans-serif;
     font-weight: 700; */
@@ -6,22 +12,64 @@
 
 
 
-.about-app-para {
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body {
+    background-color: white;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-one-stop {
+    /* border: 50px solid #fff; */
+    padding: 50px;
+    background-image: url('../assets/photos/about-app-hero2.jpg');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/photos/about-app-hero2.jpg'); */
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.hero-home-text, .para-home-text {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: center;
+    min-height: 300px;
+    border-radius: 15px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    color: #fff;
+}
+
+
+.view-para {
     color: blue;
-    /* The image used */
     background-image: url("../assets/photos/about-app-hero1.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-  
+    min-height: 500px;   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+
 
 .one-stop {
+
     min-height: 200px;
     background-color: blue;
 }
@@ -68,3 +116,8 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: brown;}
+
+    min-height: 500px;
+    background-color: #fff;
+}
+
