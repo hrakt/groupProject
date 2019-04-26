@@ -46,8 +46,8 @@ let returnObjectArr = (arr1,arr2) =>{
 
 router.get('/index', async(req,res)=>{
     try{
-        const foundEvents = await Events.find({});
-        const foundUser = await Users.findById(req.session.usersDbId);
+        const foundEvents   = await Events.find({});
+        const foundUser     = await Users.findById(req.session.usersDbId);
 
 
         res.render('events/index.ejs',{
@@ -65,13 +65,17 @@ router.get('/index', async(req,res)=>{
 router.get('/:id', async (req, res) => {
     console.log(req.session);
     try{
-        const foundEvents = await Events.findById(req.params.id);
-        const foundUser = await Users.findById(req.session.usersDbId);
+        const foundEvents       = await Events.findById(req.params.id).populate("users").exec();
+        const foundUser         = await Users.findById(req.session.usersDbId);
+        const usersAttending    = foundEvents.users;
+
+        console.log(usersAttending, "<--- this is the users attending")
 
         res.render('events/show.ejs', {
             events: foundEvents,
             logged: req.session.logged,
-            user: foundUser
+            user: foundUser,
+            attendees: usersAttending
 
         })
     }catch(err){

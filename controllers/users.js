@@ -27,9 +27,13 @@ router.post('/:id', async(req,res)=>{
     const currentUser       = await Users.findById(req.session.usersDbId);
     const foundEvent        = await Events.findById(req.params.id);
 
+
     currentUser.events.push(foundEvent);
     currentUser.save();
     console.log(currentUser.events);
+    foundEvent.users.push(req.session.usersDbId);
+    foundEvent.save();
+    console.log(foundEvent, "<=------ this is the found event")
     res.redirect(`/users/${currentUser._id}`);
 })
 
