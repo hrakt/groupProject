@@ -13,7 +13,7 @@ function checkLogin(req,res,next){
     }
 }
 
-router.use(checkLogin);
+
 
 router.get('/add' , async(req,res) =>{
     try{
@@ -95,7 +95,7 @@ router.get('/:id/edit', async (req, res)=>{
 router.put('/:id', async (req, res) => {
     try{
     const updatedEvent = await Events.findByIdAndUpdate(req.params.id, req.body, {new: true});
-    console.log(updatedEvent + 'udpated event PUT')
+    console.log(updatedEvent + 'updated event PUT')
     res.redirect('/events/add')
     } catch (err){
         res.send(err)
@@ -105,9 +105,9 @@ router.put('/:id', async (req, res) => {
 
 router.post('/add', async(req,res)=>{
     try {
-    const createdEvent = await Events.create(req.body);
-    console.log(createdEvent);
-    res.redirect('/events/add')
+        const createdEvent = await Events.create(req.body);
+        console.log(createdEvent);
+        res.redirect('/events/add')
     } catch(err){
         res.send(err);
     }

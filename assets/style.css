@@ -5,5 +5,25 @@
 }
 
 body {
-    background-color: green;
+    background-color: limegreen;
+}
+
+.about-app-para {
+    color: blue;
+    /* The image used */
+    background-image: url("../assets/photos/about-app-hero1.jpg");
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.one-stop {
+    min-height: 200px;
+    background-color: blue;
 }
