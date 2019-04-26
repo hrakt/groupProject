@@ -13,6 +13,7 @@ const userController    = require('./controllers/users');
 const eventController   = require('./controllers/events');
 const authController    = require('./controllers/authControllers')
 
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
@@ -20,9 +21,14 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+app.use('/assets', express.static('assets'))
+
 
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('home.ejs', {
+        logged: req.session.logged
+    });
+    
 })
 
 app.use('/users', userController);
@@ -32,7 +38,6 @@ app.use('/auth', authController);
 app.get("*", (req, res) => {
     res.send('page not found')
 })
-app.use('/assets', express.static('assets'))
 
 app.listen(PORT, () => {
     console.log('listening...on port ', PORT);
