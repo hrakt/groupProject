@@ -4,6 +4,17 @@ const Events    = require('../models/events');
 const Users     = require('../models/users');
 
 
+function checkLogin(req,res,next){
+    if(req.session.logged){
+        next()
+    }else{
+        console.log("user not logged in, please login before contiuning")
+        res.redirect("/auth/login");
+    }
+}
+
+router.use(checkLogin);
+
 router.get('/add' , async(req,res) =>{
     try{
         const foundEvents = await Events.find({});
@@ -52,7 +63,7 @@ router.get('/index', async(req,res)=>{
 
 
 router.get('/:id', async (req, res) => {
-    console.log(req.session)
+    console.log(req.session);
     try{
         const foundEvents = await Events.findById(req.params.id);
         const foundUser = await Users.findById(req.session.usersDbId);
