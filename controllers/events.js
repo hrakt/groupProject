@@ -13,7 +13,7 @@ function checkLogin(req,res,next){
     }
 }
 
-router.use(checkLogin);
+
 
 router.get('/add' , async(req,res) =>{
     try{
@@ -105,9 +105,9 @@ router.put('/:id', async (req, res) => {
 
 router.post('/add', async(req,res)=>{
     try {
-    const createdEvent = await Events.create(req.body);
-    console.log(createdEvent);
-    res.redirect('/events/add')
+        const createdEvent = await Events.create(req.body);
+        console.log(createdEvent);
+        res.redirect('/events/add')
     } catch(err){
         res.send(err);
     }

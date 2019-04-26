@@ -4,7 +4,7 @@ const Users = require('./users')
 const eventSchema = mongoose.Schema({
     name: String,
     artists: [{}],
-    date: String,
+    date: Date,
     venue: String,
     picture: String,
     users: [{
