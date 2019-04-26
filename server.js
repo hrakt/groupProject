@@ -25,6 +25,8 @@ app.use('/users', userController);
 app.use('/events', eventController);
 app.use('/auth', authController);
 
+app.use('/assets', express.static('assets'))
+
 app.listen(PORT, () => {
     console.log('listening...on port ', PORT);
 })
