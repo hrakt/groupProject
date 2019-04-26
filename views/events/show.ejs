@@ -8,6 +8,16 @@
         <li>Pictures: <%=events.picture%></li>
     </ul>
 
+    <div class="dropdown">
+        <button class="dropbtn">Users attending(<%=attendees.length%>)</button>
+        <div class="dropdown-content">
+            <% for(let i=0;i<attendees.length;i++){%>
+                <a href="#"><%=attendees[i].firstName%></a>
+
+            <%}%>
+        </div>
+    </div>
+
     <h2>Countdown Timer</h2>
     <p id="countdown-timer"></p> 
 
