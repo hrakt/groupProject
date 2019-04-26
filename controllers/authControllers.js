@@ -3,11 +3,18 @@ const router    = express.Router();
 const bcrypt    = require('bcryptjs');
 const User      = require('../models/users');
 
-router.get('/login', (req, res) => {
-    console.log('login in')
-    res.render('login.ejs', {
-        logged: req.session.logged
-    })
+
+
+router.get('/login',(req, res) => {
+
+    if(req.session.logged != true){
+        res.render('login.ejs', {
+            logged: req.session.logged
+        })
+    }else{
+        console.log("please login before continuing");
+        res.redirect(`/users/${req.session.usersDbId}`);
+    }
 })
 
 router.get('/register', (req, res) => {

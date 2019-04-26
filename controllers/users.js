@@ -3,6 +3,9 @@ const router    = express.Router();
 const Users     = require('../models/users');
 const Events    =require('../models/events');
 
+router.get('/', (req, res) => {
+    res.send('users index')
+})
 
 router.get('/:id' , async(req,res) =>{
     try{
@@ -22,7 +25,7 @@ router.get('/:id' , async(req,res) =>{
 
 router.post('/:id', async(req,res)=>{
     const currentUser       = await Users.findById(req.session.usersDbId);
-    const foundEvent        =await Events.findById(req.params.id);
+    const foundEvent        = await Events.findById(req.params.id);
 
     currentUser.events.push(foundEvent);
     currentUser.save();

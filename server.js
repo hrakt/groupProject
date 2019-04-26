@@ -21,9 +21,17 @@ app.use(session({
     saveUninitialized: false
 }));
 
+app.get('/', (req, res) => {
+    res.render('home.ejs');
+})
+
 app.use('/users', userController);
 app.use('/events', eventController);
 app.use('/auth', authController);
+
+app.get("*", (req, res) => {
+    res.send('page not found')
+})
 
 app.listen(PORT, () => {
     console.log('listening...on port ', PORT);
