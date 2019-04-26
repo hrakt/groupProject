@@ -55,10 +55,12 @@ router.get('/:id', async (req, res) => {
     console.log(req.session)
     try{
         const foundEvents = await Events.findById(req.params.id);
+        const foundUser = await Users.findById(req.session.usersDbId);
+
         res.render('events/show.ejs', {
             events: foundEvents,
             logged: req.session.logged,
-            // user: req.session.user
+            user: foundUser
 
         })
     }catch(err){
