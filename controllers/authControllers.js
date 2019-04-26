@@ -32,6 +32,7 @@ router.post('/register', async(req,res)=>{
     try {
         const createdUser = await User.create(userDbEntry);
         console.log(createdUser);
+        res.locals.user = createdUser
     
         // res.send('you registered');
         res.redirect(`/users/${createdUser._id}`)
@@ -55,6 +56,7 @@ router.post('/login', async(req,res)=>{
                 if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
                     req.session.logged       = true;
                     req.session.usersDbId    = foundUser._id;
+                    res.locals.user = foundUser
     
                     console.log(foundUser, "=========");
                     res.redirect(`/users/${foundUser._id}`);
