@@ -63,6 +63,7 @@ html, body {
 }
 
 .loader-container {
+    display: none;
     height: 100%;
     background-color: #000;
     display: flex;
@@ -75,12 +76,13 @@ html, body {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    padding-left: 60px;
 }
 
 .eye-container {
     justify-content: center;
     display: flex;
-    margin-left: -100px;
+    /* margin-left: -100px; */
     flex-direction: column;
     /* animation: fadeinout 4s ease-in-out 1s 1; */
     /* animation-fill-mode: forwards; */
@@ -88,7 +90,6 @@ html, body {
 }
 
 .home-container {
-    display: none;
     height: 100%;
     background-color: #0DF205;
 }
