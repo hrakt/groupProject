@@ -66,9 +66,25 @@ html, body {
     height: 100%;
     background-color: #000;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    padding-left: 60px;
+    /* padding-left: 60px; */
+}
+
+.eye-text-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.eye-container {
+    justify-content: center;
+    display: flex;
+    margin-left: -100px;
+    flex-direction: column;
+    /* animation: fadeinout 4s ease-in-out 1s 1; */
+    /* animation-fill-mode: forwards; */
+    /* opacity: 0; */
 }
 
 .home-container {
@@ -89,19 +105,30 @@ html, body {
 }
 
 .explore-h1 {
-    animation: spin .5s linear 1s 1;
+    animation: textltr .5s ease-in-out 1s 1;
     animation-fill-mode: forwards;
 }
 
 .your-h1 {
-    animation: spin .5s linear 2s 1;
+    animation: textltr .5s ease-in-out 2s 1;
     animation-fill-mode: forwards;
 }
 
 .else-h1 {
-    animation: spin .5s linear 3s 1;
+    animation: textltr .5s ease-in-out 3s 1;
     animation-fill-mode: forwards;
 }
+
+.explore-h1 h1, .your-h1 h1, .else-h1 h1 {
+    transition-duration: 500ms;
+    transition-property: color;
+}
+
+.explore-h1 h1:hover, .your-h1 h1:hover, .else-h1 h1:hover {
+    color: red;
+    cursor: pointer;
+}
+
 
 /* .home-container {
     display: flex;
@@ -210,14 +237,24 @@ html, body {
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: spin 2s linear infinite;
+    animation: textltr 2s linear infinite;
   } */
   
-  @keyframes spin {
+  @keyframes textltr {
     0% { transform: translateX(-100px); opacity: 0; color: #fff; }
     /* 90% {transform: translateY(-10px)}
     93% {transform: translateY(10px)}
     96% {transform: translateY(-10px)}
     99% {transform: translateY(10px)} */
     100% { transform: translateX(0px); transform: translateY(0px); opacity: 100; color: lime;}
+  }
+
+  @keyframes fadeinout {
+    0% { opacity: 0; }
+    25% { opacity: 50; }
+    40% { opacity: 0; }
+    65% { opacity: 75; }
+    85% { opacity: 0; }
+    95% { opacity: 100; }
+    100% { opacity: 0; }
   }
