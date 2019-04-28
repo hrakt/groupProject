@@ -72,7 +72,7 @@ html, body {
     /* padding-left: 60px; */
 }
 
-.eye-text-container {
+.eye-text-container, .home-eye-text-container {
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -182,7 +182,8 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: rgb(199,0,255);
+   background: #000;
+    /* background: rgb(94, 255, 0); */
     /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
     /* background-color: #0DF205; */
     /* justify-content: center; */
@@ -196,7 +197,7 @@ html, body {
     flex-direction: row;
     /* margin-top: -80px; */
     /* margin: 10px; */
-    margin-top: -75px;
+    margin-top: -100px;
     /* padding: 10px; */
     justify-content: center;
 }
@@ -333,3 +334,8 @@ html, body {
     95% { opacity: 100; }
     100% { opacity: 0; }
   }
+
+@keyframes fadein {
+    0% { opacity: 0;}
+    100% { opacity: 100;}
+}
