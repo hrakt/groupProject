@@ -163,19 +163,24 @@ html, body {
     max-width: 800px;
 }
 
-.home-img-explore {
+.home-img {
     position: absolute;
     z-index: 0;
 }
 
+.home-img-explore {
+    position: absolute;
+    z-index: -1;
+}
+
 .home-img-your {
     position: relative;
-    z-index: -1;
+    z-index: -2;
 }
 
 .home-img-else {
     position: absolute;
-    z-index: -2;
+    z-index: -3;
 }
 
 .home-bottom-container {
@@ -187,6 +192,7 @@ html, body {
     /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
     /* background-color: #0DF205; */
     /* justify-content: center; */
+    position: relative;
 }
 
 .card-img-container {
@@ -200,6 +206,18 @@ html, body {
     margin-top: -100px;
     /* padding: 10px; */
     justify-content: center;
+    z-index: 2;
+}
+
+.card-img-container2 {
+    display: flex;
+    flex-direction: row;
+    /* margin-top: -10%; */
+    position: absolute;
+    top: -11%;
+    left: -35%;
+    z-index: 1;
+    /* right: 100%; */
 }
 
 .home-img-flyer1, .home-img-flyer2, .home-img-flyer3 {
@@ -338,4 +356,9 @@ html, body {
 @keyframes fadein {
     0% { opacity: 0;}
     100% { opacity: 100;}
+}
+
+@keyframes fadeout {
+    0% { opacity: 100;}
+    100% { opacity: 0;}
 }
