@@ -4,6 +4,7 @@
     display: flex;
     border: 1px dotted black;
     margin: 0;
+}
 
 * {
     margin: 0;
@@ -239,7 +240,7 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100%;
-   background: #000;
+    background: #000;
     /* background: rgb(94, 255, 0); */
     /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
     /* background-color: #0DF205; */
