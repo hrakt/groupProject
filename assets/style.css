@@ -9,6 +9,90 @@ html, body {
     /* background-color: white; */
 }
 
+/* Style the navbar */
+.nav-not-logged, .nav-logged{
+    overflow: hidden;
+    background-color: #892cff;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 8%;
+}
+
+.footer, .foot-home {
+    /* overflow: hidden; */
+    background-color: #892cff;
+    display: flex;
+    /* flex: 1; */
+    /* flex-direction: row-reverse; */
+    height: 5%;
+    /* font-family: 'Raleway', san-serif; */
+    /* font-weight: 400; */
+    font-size: 36px;
+    color: #fff;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* padding-right: 30px; */
+    /* text-decoration: none; */
+}
+
+.foot-home a, .footer a {
+    /* display: flex;
+    flex-direction: row-reverse; */
+    /* align-content: center; */
+    align-items: center;
+    /* overflow: hidden; */
+    /* background-color: #892cff; */
+    /* height: 8%; */
+    /* font-family: 'Raleway', san-serif;
+    font-weight: 400;
+    font-size: 36px; */
+    color: #fff;
+    /* padding-right: 30px; */
+    text-decoration: none;
+}
+
+  /* Navbar links */
+.nav-not-logged a, .nav-logged a {
+    display: flex;
+    flex-direction: row-reverse;
+    /* align-content: center; */
+    align-items: center;
+    overflow: hidden;
+    /* background-color: #892cff; */
+    /* height: 8%; */
+    font-family: 'Raleway', san-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: #fff;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+.nav-logged a:hover, .nav-not-logged a:hover {
+    color: #0DF205;
+    cursor: pointer;
+}
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
 .register-page {
     display: flex;
     height: 100%;
@@ -92,6 +176,16 @@ input:valid~label {
     margin: auto;
 }
 
+.sign-up-btn {
+    background-color: #0DF205;
+    border: none;
+    border-radius: -6px;
+    height: 150px;
+    width: 800px;
+    font-size: 16px;
+    margin: auto;
+}
+
 .register-btn:hover {
     color: white;
     cursor: pointer;
@@ -102,6 +196,7 @@ input:valid~label {
     padding-top: 8%;
     text-align: center;
 }
+
 
 .register-container p a{
     font-weight: 700;
@@ -171,6 +266,7 @@ input:valid~label {
     display: flex;
     flex-direction: column;
     font-size: 60px;
+    font-family: 'Montserrat', san-serif;
     /* justify-content: center; */
 }
 
@@ -191,6 +287,7 @@ input:valid~label {
 
 .explore-h1 h1, .your-h1 h1, .else-h1 h1,
 .explore-static h1, .your-static h1, .else-static h1 {
+    font-family: 'Montserrat', san-serif;
     transition-duration: 500ms;
     transition-property: color;
 }
@@ -206,6 +303,12 @@ input:valid~label {
     cursor: pointer;
 }
 
+.home-bottom-cont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+}
+
 .explore-static, .your-static, .else-static,
 .home-bottom-text {
     text-align: left;
@@ -213,6 +316,7 @@ input:valid~label {
     display: flex;
     flex-direction: column;
     font-size: 60px;
+    font-family: 'Montserrat', san-serif;
 }
 
 .home-bottom-text {
@@ -222,8 +326,19 @@ input:valid~label {
     /* align-content: center; */
     /* align-items: center; */
     font-size: 60px;
-    margin-top: 5%;
-    margin-right: 5%;
+    margin-top: -15%;
+    margin-right: 6%;
+    font-family: 'Montserrat', san-serif;
+}
+
+.sign-up-but {
+    margin: auto;
+    margin-top: 3%;
+}
+
+.sign-up-bot {
+    margin: auto;
+    margin-top: 3%;
 }
 
 .home-img-container {
@@ -260,7 +375,7 @@ input:valid~label {
 .home-bottom-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 85%;
     background: #000;
     /* background: rgb(94, 255, 0); */
     /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
@@ -506,3 +621,10 @@ input:valid~label {
     z-index: 0;
     opacity: 1;
 } */
+
+
+/* for the events in index page */
+.events{
+    height: 100px;
+    overflow:scroll;
+}

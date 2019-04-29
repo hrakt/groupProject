@@ -1,7 +1,8 @@
 const express   = require('express');
 const router    = express.Router();
 const Users     = require('../models/users');
-const Events    =require('../models/events');
+const Events    = require('../models/events');
+const bcrypt = require("bcryptjs")
 
 router.get('/', (req, res) => {
     res.send('users index')
@@ -20,6 +21,31 @@ router.get('/:id' , async(req,res) =>{
     }catch(err){
         console.log('error happening')
         res.send(err);
+    }
+})
+
+router.get('/:id/edit' , async(req,res) =>{
+    try{
+        const foundUser     = await Users.findById(req.params.id)
+        console.log(foundUser)
+        res.render('users/edit.ejs',{
+            user : foundUser,
+            logged: req.session.logged
+        });
+    }catch(err){
+        console.log('error happening')
+        res.send(err);
+    }
+})
+
+router.put('/edit/:id', async (req, res) => {
+    req.body.password       = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+    try{
+    const updatedUser       = await Users.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    console.log(updatedUser + 'updated users PUT')
+    res.redirect(`/users/${updatedUser._id}`)
+    } catch (err){
+        res.send(err)
     }
 })
 
