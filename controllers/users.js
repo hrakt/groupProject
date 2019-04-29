@@ -40,9 +40,15 @@ router.post('/:id', async(req,res)=>{
 router.delete('/:id',async(req,res)=>{
     try{
         const currentUser       = await Users.findById(req.session.usersDbId);
+        const foundEvent        = await Events.findById(req.params.id);
         console.log(currentUser, '<---this is current user')
         currentUser.events.remove(req.params.id);
         await currentUser.save();
+
+        foundEvent.users.remove(currentUser._id);
+        await foundEvent.save();
+
+
         res.redirect(`/users/${currentUser._id}`);
     }catch(err){
         res.send(err);
