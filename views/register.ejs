@@ -12,18 +12,18 @@
         <div class="register-container">
                 <h1 class="register-h">Create account</h1>
             <form class="register-box" onsubmit="event.preventDefault(); validateMyForm();" action="/auth/register" method="POST">
-                    <input type="text" name="email" id="email-box" placeholder="Email Address" required> <br/>
+                    <input type="text" name="email" placeholder="Email" required><br/>
                     <input type="text" name="firstName" placeholder="First Name" required> <br/>
                     <input type="text" name="lastName" placeholder="Last Name" required> <br/>
                     <input type="password" name="password" placeholder="Password" required> <br/>
                 <button class="register-btn" type="submit">Let's do this</button>
             </form>
         </div>
-        <div class="register-gif">
+        <div class="register-container" style="background-color: #625192;">
             <img src=""/>
         </div>
-
     </div>
+    
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
