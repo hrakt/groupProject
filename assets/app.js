@@ -1,5 +1,9 @@
 console.log('js connected');
 
+setTimeout(function () {
+    document.querySelector('.loader-container').classList.add('hidden')
+}, 4000)
+
 
 let validEmail = true;
 let emailBox = document.getElementById("email-box")
@@ -60,9 +64,7 @@ $.ajax({
              }
   });
 
-setTimeout(function () {
-    document.querySelector('.loader-container').classList.add('hidden')
-}, 4000)
+
 
 // document.addEventListener('scroll', function(){
 //     const scrollTop = document.scrollTop
