@@ -1,28 +1,22 @@
 console.log('js connected');
 
-// function onReady(check) {
-//     const intervalID = window.setInterval(checkReady, 1000);
-
-//     function checkReady() {
-//         if (document.querySelector('.home-container')[0] !== undefined) {
-//             window.clearInterval(intervalID);
-//             check.call(this);
-//         }
-//     }
-// }
-
-// function show(id, value) {
-//     document.getElementById(id).style.display = value ? 'flex' : 'none';
-// }
-
-// onReady(function () {
-//     show('.home-container', true);
-//     show('.loader-container', false);
-// });
-
 setTimeout(function () {
     document.querySelector('.loader-container').classList.add('hidden')
 }, 4000)
+
+// document.addEventListener('scroll', function(){
+//     const scrollTop = document.scrollTop
+//     const scrollBottom = scrollTop + window.innerHeight
+//     const pageBottom = document.innerHeight
+//     const differ = pageBottom - scrollBottom
+//     const opacity = 1 - differ / 300
+//     document.querySelector('.fade-bg').css('opacity', opacity)
+// })
+
+// window.addEventListener('scroll', function() {
+//     document.querySelector('.home-bottom-text').innerHTML = pageYOffset + 'px';
+//   });
+
 
 const exploreText = document.querySelector('.explore-static');
 const exploreImage = document.querySelector('.home-img-explore')
@@ -33,6 +27,8 @@ const yourImage = document.querySelector('.home-img-your')
 const elseText = document.querySelector('.else-static')
 const elseImage = document.querySelector('.home-img-else')
 console.log(exploreText)
+
+
 
 exploreText.addEventListener('mouseover', function() {
     exploreImage.style.zIndex = '0';
@@ -76,3 +72,4 @@ elseText.addEventListener('mouseover', function() {
     })
     console.log(elseText)
 })
+
