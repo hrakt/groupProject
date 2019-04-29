@@ -59,24 +59,34 @@ button:hover {
 
 html, body {
     height: 100%;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .loader-container {
-    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     background-color: #000;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: fixed;
+    z-index: 3;
+    transition: opacity 1s;
     /* padding-left: 60px; */
+}
+
+.loader-container.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .eye-text-container, .home-eye-text-container {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding-left: 60px;
+    /* padding-left: 60px; */
     z-index: 1;
 }
 
@@ -85,9 +95,14 @@ html, body {
     display: flex;
     /* margin-left: -100px; */
     flex-direction: column;
-    /* animation: fadeinout 4s ease-in-out 1s 1; */
+    animation: fadein 4s ease-in-out 1;
     /* animation-fill-mode: forwards; */
     /* opacity: 0; */
+}
+
+.eye-gif {
+    background-color: #fff;
+    margin-left: -15%;
 }
 
 .home-container {
@@ -214,14 +229,15 @@ html, body {
     flex-direction: row;
     /* margin-top: -10%; */
     position: absolute;
-    top: -11%;
-    left: -35%;
+    top: -20%;
+    left: -25%;
     z-index: 1;
     /* right: 100%; */
 }
 
 .home-img-flyer1, .home-img-flyer2, .home-img-flyer3 {
     margin: 10px;
+    box-shadow: -7px 10px 4px 0px #00000030;
 }
 
 /* .home-container {

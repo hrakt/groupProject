@@ -20,6 +20,10 @@ console.log('js connected');
 //     show('.loader-container', false);
 // });
 
+setTimeout(function () {
+    document.querySelector('.loader-container').classList.add('hidden')
+}, 4000)
+
 const exploreText = document.querySelector('.explore-static');
 const exploreImage = document.querySelector('.home-img-explore')
 
