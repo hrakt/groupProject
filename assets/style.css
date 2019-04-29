@@ -148,8 +148,8 @@ input:valid~label {
 
 .register-box input:focus{
     border-bottom: 2px solid #0DF205;
-    -webkit-animation: mymove 5s infinite;
-    animation: mymove 5s infinite;
+    -webkit-animation: mymove 3.5s infinite;
+    animation: mymove 3.5s infinite;
 }
 
 @-webkit-keyframes mymove {
@@ -191,12 +191,19 @@ input:valid~label {
     cursor: pointer;
 }
 
-
-.register {
-    /* font-family: 'Ohno Blazeface', sans-serif;
-    font-weight: 700; */
-    color: white;
+.register-container p{
+    font-size: 14px;
+    padding-top: 8%;
+    text-align: center;
 }
+
+
+.register-container p a{
+    font-weight: 700;
+    text-decoration: none;
+}
+/* .about-app-para { */
+
 
 .loader-container {
     top: 0;
