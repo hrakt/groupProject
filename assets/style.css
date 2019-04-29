@@ -166,6 +166,7 @@ html, body {
 .home-bottom-text {
     text-align: right;
     flex: 1;
+    color: limegreen;
     /* align-content: center; */
     /* align-items: center; */
     font-size: 60px;
