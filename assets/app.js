@@ -43,27 +43,31 @@ let openModal = () =>{
     }
 }
 
-const searchButton = document.getElementById("search-button");
+// const searchButton = document.getElementById("search-button");
 
-const search = () =>{
-    console.log("i get here");
-    $.ajax({
-        type:"GET",
-        url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=Hrfvp5IvZnT0GP85zTN8GGs9W6W3kczc",
-        async:true,
-        dataType: "json",
-        success: function(json) {
-                    console.log(json);
-                    // Parse the response.
-                    // Do other things.
-                 },
-        error: function(xhr, status, err) {
-                    // This time, we do not end up here!
-                 }
-      });
-}
+// const search = () =>{
+//     let input = document.getElementById("input-box").value;
+//     let events = document.querySelector(".events")
+//     console.log(input);
+//     $.ajax({
+//         type:"GET",
+//         url:"https://app.ticketmaster.com/discovery/v2/events/Z7r9jZ1Aebd39.json?apikey=Hrfvp5IvZnT0GP85zTN8GGs9W6W3kczc",
+//         async:true,
+//         dataType: "json",
+//         success: function(json) {
+//                     console.log(json)
+//                     for (let i = 0;i<json._embedded.events.length; i ++){
+//                         let el = document.createElement("div")
+//                         el.innerText = json._embedded.events[i].name
+//                         events.append(el)
+//                     }
+//                  },
+//         error: function(xhr, status, err) {
+//                  }
+//       });
+// }
 
-searchButton.addEventListener('click', search);
+// searchButton && searchButton.addEventListener('click', search);
 
 
 
