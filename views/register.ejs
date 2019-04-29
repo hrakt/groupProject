@@ -4,22 +4,25 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
         <link href="/assets/style.css" rel="stylesheet">
     </head>
     <body>
-    <div class="register-container">
-        <div class="register">
-            <h1>Register</h1>
+    <div class="register-page">
+        <div class="register-container">
+                <h1 class="register-h">Register</h1>
+            <p class="register-p"> Get started today and create a free account </p>
+            <form class="register-box" action="/auth/register" method="POST">
+                    <input type="text" name="email" placeholder="Email Address"> <br/>
+                    <input type="text" name="firstName" placeholder="First Name"> <br/>
+                    <input type="text" name="lastName" placeholder="Last Name"> <br/>
+                    <input type="password" name="password" placeholder="Password"> <br/>
+                <button class="register-btn" type="submit">Let's do this</button>
+            </form>
         </div>
-        <p> Get started today and create a free account </p>
-        <form class="register-box" action="/auth/register" method="POST">
-                <input type="text" name="email" placeholder="Email Address"> <br/>
-                <input type="text" name="firstName" placeholder="First Name"> <br/>
-                <input type="text" name="lastName" placeholder="Last Name"> <br/>
-                <input type="password" name="password" placeholder="Password"> <br/>
-            <button type="submit">Let's do this</button>
-        </form>
+        <div class="register-gif">
+            <img src=""/>
+        </div>
     </div>
     </body>
     <script src=""></script>
