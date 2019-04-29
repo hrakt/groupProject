@@ -67,6 +67,14 @@ input {
 }
 
 
+.register {
+    /* font-family: 'Ohno Blazeface', sans-serif;
+    font-weight: 700; */
+    color: white;
+}
+
+
+
 
 
 /* .about-app-para { */
@@ -78,6 +86,7 @@ input {
     padding: 0;
     box-sizing: border-box;
 }
+
 
 
 .loader-container {
@@ -165,7 +174,11 @@ input {
     transition-property: color;
 }
 
-.explore-h1 h1:hover, .your-h1 h1:hover, .else-h1 h1:hover, 
+.explore-h1 h1:hover, .your-h1 h1:hover, .else-h1 h1:hover {
+    color: limegreen;
+    cursor: pointer;
+}
+
 .explore-static h1:hover, .your-static h1:hover, .else-static h1:hover {
     color: limegreen;
     text-decoration: line-through;
