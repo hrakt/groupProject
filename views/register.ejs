@@ -10,29 +10,18 @@
     <body>
     <div class="register-page">
         <div class="register-container">
-                <h1 class="register-h">Register</h1>
-            <p class="register-p"> Get started today and create a free account </p>
-            <form class="register-box" action="/auth/register" method="POST">
-                    <input type="text" name="email" placeholder="Email Address"> <br/>
-                    <input type="text" name="firstName" placeholder="First Name"> <br/>
-                    <input type="text" name="lastName" placeholder="Last Name"> <br/>
-                    <input type="password" name="password" placeholder="Password"> <br/>
+                <h1 class="register-h">Create account</h1>
+            <form class="register-box" onsubmit="event.preventDefault(); validateMyForm();" action="/auth/register" method="POST">
+                    <input type="text" name="email" id="email-box" placeholder="Email Address" required> <br/>
+                    <input type="text" name="firstName" placeholder="First Name" required> <br/>
+                    <input type="text" name="lastName" placeholder="Last Name" required> <br/>
+                    <input type="password" name="password" placeholder="Password" required> <br/>
                 <button class="register-btn" type="submit">Let's do this</button>
             </form>
         </div>
         <div class="register-gif">
             <img src=""/>
         </div>
-
-        <p> Get started today and create a free account </p>
-        <form class="register-box" onsubmit="event.preventDefault(); validateMyForm();" action="/auth/register" method="POST">
-                <input type="text" name="email" id="email-box" placeholder="Email Address" required> <br/>
-                <input type="text" name="firstName" placeholder="First Name" required> <br/>
-                <input type="text" name="lastName" placeholder="Last Name" required> <br/>
-                <input type="password" name="password" placeholder="Password" required> <br/>
-            <button type="submit">Let's do this</button>
-        </form>
-
 
     </div>
     <div id="myModal" class="modal">

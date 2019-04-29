@@ -65,6 +65,10 @@ $.ajax({
   });
 
 
+
+
+
+
 // document.addEventListener('scroll', function(){
 //     const scrollTop = document.scrollTop
 //     const scrollBottom = scrollTop + window.innerHeight
