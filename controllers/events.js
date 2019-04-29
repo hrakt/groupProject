@@ -70,7 +70,7 @@ router.get('/:id', async (req, res) => {
         const usersAttending    = foundEvents.users;
 
         console.log(usersAttending, "<--- this is the users attending")
-
+        
         res.render('events/show.ejs', {
             events: foundEvents,
             logged: req.session.logged,

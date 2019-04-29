@@ -12,7 +12,7 @@ html, body {
 .register-page {
     flex-direction: row;
     display: flex;
-    border: 1px dotted black;
+    /* border: 1px dotted black; */
     margin: 0;
 }
 
@@ -20,7 +20,7 @@ html, body {
     padding-top: 30px;
     /* flex-direction: column; */
     /* text-align: center; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .register-h {
@@ -31,12 +31,6 @@ html, body {
     padding-top: 14px;
     display: flex;
     /* border: 1px solid green; */
-}
-
-.register-p {
-    font-family: 'Raleway', san-serif;
-    font-weight: 300;
-    padding-left: 60px;
 }
 
 .register-box{
@@ -72,11 +66,28 @@ input {
     cursor: pointer;
 }
 
+
 .register {
     /* font-family: 'Ohno Blazeface', sans-serif;
     font-weight: 700; */
     color: white;
 }
+
+
+
+
+
+/* .about-app-para { */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 
 .loader-container {
     top: 0;
@@ -229,7 +240,7 @@ input {
     display: flex;
     flex-direction: column;
     height: 100%;
-   background: #000;
+    background: #000;
     /* background: rgb(94, 255, 0); */
     /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
     /* background-color: #0DF205; */

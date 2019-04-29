@@ -13,6 +13,8 @@ const userController    = require('./controllers/users');
 const eventController   = require('./controllers/events');
 const authController    = require('./controllers/authControllers')
 
+const Users     = require('./models/users');
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
@@ -26,9 +28,14 @@ app.use('/assets', express.static('assets'))
 
 
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+    let foundUser = null;
+    if(req.session.logged == true){
+        foundUser     = await Users.findById(req.session.usersDbId);
+    }
     res.render('home.ejs', {
-        logged: req.session.logged
+        logged: req.session.logged,
+        user: foundUser
     });
     
 })
@@ -45,9 +52,6 @@ app.get('/', (req, res) => {
 app.get("*", (req, res) => {
     res.send('page not found')
 })
-
-
-
 
 
 app.listen(PORT, () => {
