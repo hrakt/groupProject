@@ -49,7 +49,7 @@ router.get('/index', async(req,res)=>{
         const foundEvents   = await Events.find({});
         const foundUser     = await Users.findById(req.session.usersDbId);
 
-
+        console.log(foundUser)
         res.render('events/index.ejs',{
             events: foundEvents,
             user: foundUser,

@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
     firstName:  {type: String, required: true},
     lastName:   String,
     password:   {type: String, required: true},
+    profilePic: {type: String},
     events:     [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Event'
