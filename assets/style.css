@@ -1,15 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    /* background-color: white; */
+}
 
 .register-page {
     flex-direction: row;
     display: flex;
     border: 1px dotted black;
     margin: 0;
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
 }
 
 .register-container {
@@ -71,6 +75,9 @@ input {
 
 
 
+/* .about-app-para { */
+
+
 
 * {
     margin: 0;
@@ -80,16 +87,11 @@ input {
 
 
 
+
 .register {
     /* font-family: 'Ohno Blazeface', sans-serif;
     font-weight: 700; */
     color: white;
-}
-
-
-html, body {
-    height: 100%;
-    /* background-color: white; */
 }
 
 .loader-container {
