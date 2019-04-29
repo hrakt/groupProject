@@ -13,14 +13,25 @@
             <h1>Register</h1>
         </div>
         <p> Get started today and create a free account </p>
-        <form class="register-box" action="/auth/register" method="POST">
-                <input type="text" name="email" placeholder="Email Address"> <br/>
-                <input type="text" name="firstName" placeholder="First Name"> <br/>
-                <input type="text" name="lastName" placeholder="Last Name"> <br/>
-                <input type="password" name="password" placeholder="Password"> <br/>
+        <form class="register-box" onsubmit="event.preventDefault(); validateMyForm();" action="/auth/register" method="POST">
+                <input type="text" name="email" id="email-box" placeholder="Email Address" required> <br/>
+                <input type="text" name="firstName" placeholder="First Name" required> <br/>
+                <input type="text" name="lastName" placeholder="Last Name" required> <br/>
+                <input type="password" name="password" placeholder="Password" required> <br/>
             <button type="submit">Let's do this</button>
         </form>
     </div>
-    </body>
-    <script src=""></script>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Please enter a valid email address</p>
+        </div>
+        </body>
+    </div>
+    <script>
+
+
+    </script>
 </html>
+
+<%- include('./partials/footer.ejs')%>
