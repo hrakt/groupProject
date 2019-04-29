@@ -24,9 +24,9 @@
     <script> 
         let time = document.querySelector(".data").innerText
         time = time.toString().split("(").shift();
-        console.log(time)
+
         let deadline = new Date(time).getTime();
-        console.log(deadline)
+
         let x = setInterval(function() { 
         let now = new Date().getTime(); 
         let t = deadline - now; 
@@ -41,8 +41,8 @@
                 document.getElementById("countdown-timer").innerHTML = "EXPIRED"; 
             } 
         }, 1000); 
-        console.log(deadline);
-        let dead = document.querySelector(".deadline")
-        dead.innerText = deadline
+        // console.log(deadline);
+        // let dead = document.querySelector(".deadline")
+        // dead.innerText = deadline;
     </script> 
 <%- include('../partials/footer.ejs')%>

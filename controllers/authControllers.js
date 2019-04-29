@@ -18,7 +18,8 @@ router.get('/login',(req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    res.render('register.ejs')
+    req.session.logged       = true;
+    res.render('register.ejs',{user:req.session.usersDbId});
 })
 
 router.post('/register', async(req,res)=>{
@@ -40,7 +41,7 @@ router.post('/register', async(req,res)=>{
         const createdUser = await User.create(userDbEntry);
         console.log(createdUser);
         res.locals.user = createdUser
-    
+        req.session.usersDbId = createdUser._id
         // res.send('you registered');
         res.redirect(`/users/${createdUser._id}`)
 
@@ -69,12 +70,12 @@ router.post('/login', async(req,res)=>{
                     res.redirect(`/users/${foundUser._id}`);
                 }
                 else{
-                    console.log('not a user, make sure you enter correct login info');
+                    console.log('not a user2, make sure you enter correct login info');
                     res.redirect('/auth/login');
                 }
             }
         }else{
-            console.log('not a user, make sure you enter correct login info');
+            console.log('not a user1, make sure you enter correct login info');
             res.redirect('/auth/login');
         }
     }catch(err){

@@ -516,3 +516,10 @@ input:valid~label {
     z-index: 0;
     opacity: 1;
 } */
+
+
+/* for the events in index page */
+.events{
+    height: 100px;
+    overflow:scroll;
+}

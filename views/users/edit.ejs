@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs')%>
+
+    <h1>Profile Edit Page</h1>
+        <form action="/users/edit/<%=user._id%>?_method=PUT" method="POST">
+            <input type="text" name="email" id="email-box" placeholder="<%=user.email%>" required> <br/>
+            <input type="text" name="firstName" placeholder="<%=user.firstName%>" required> <br/>
+            <input type="text" name="lastName" placeholder="<%=user.lastName%>" required> <br/>
+            <input type="password" name="password" placeholder="<%=user.password%>" required> <br/>
+        <button class="register-btn" type="submit">Edit Profile</button>
+        </form>
+    </form>
+
+<%- include('../partials/footer.ejs')%>
