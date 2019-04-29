@@ -12,7 +12,7 @@ html, body {
 .register-page {
     flex-direction: row;
     display: flex;
-    border: 1px dotted black;
+    /* border: 1px dotted black; */
     margin: 0;
 }
 
@@ -20,7 +20,7 @@ html, body {
     padding-top: 30px;
     /* flex-direction: column; */
     /* text-align: center; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .register-h {
@@ -31,12 +31,6 @@ html, body {
     padding-top: 14px;
     display: flex;
     /* border: 1px solid green; */
-}
-
-.register-p {
-    font-family: 'Raleway', san-serif;
-    font-weight: 300;
-    padding-left: 60px;
 }
 
 .register-box{
@@ -85,14 +79,6 @@ input {
     box-sizing: border-box;
 }
 
-
-
-
-.register {
-    /* font-family: 'Ohno Blazeface', sans-serif;
-    font-weight: 700; */
-    color: white;
-}
 
 .loader-container {
     top: 0;
