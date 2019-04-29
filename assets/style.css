@@ -114,7 +114,7 @@ html, body {
     padding-bottom: 35px;
 }
 
-.register-box{
+.register-box {
     font-family: 'Raleway', san-serif;
     font-size: 17px;
     display: flex;
@@ -130,7 +130,7 @@ label {
     margin-top: 0 4px;
 }
 
-input{
+input {
     position: relative;
     height: 37px;
     outline: none;
@@ -146,7 +146,7 @@ input:valid~label {
     color: #0DF205;
 }
 
-.register-box input:focus{
+.register-box input:focus {
     border-bottom: 2px solid #0DF205;
     -webkit-animation: mymove 3.5s infinite;
     animation: mymove 3.5s infinite;
@@ -160,19 +160,18 @@ input:valid~label {
     50% {border-bottom-color: lightblue;}
 }
 
-.register-right{
+.register-right {
     background-color: #bbb;
     
 }
 
 
 .register-btn {
-    background-color: #0DF205;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
     border: none;
-    border-radius: 30px;
     height: 50px;
-    width: 200px !important;
-    font-size: 16px;
+    width: 100% !important;
+    font-size: 19px;
     margin: auto;
 }
 
@@ -191,18 +190,37 @@ input:valid~label {
     cursor: pointer;
 }
 
-.register-container p{
+.register-container p {
     font-size: 14px;
     padding-top: 8%;
     text-align: center;
 }
 
+<<<<<<< HEAD
+.register-container p a {
+=======
 
 .register-container p a{
+>>>>>>> master
     font-weight: 700;
     text-decoration: none;
 }
-/* .about-app-para { */
+
+.login-page {
+    display: flex;
+    height: 100%;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}
+
+
+
+
 
 
 .loader-container {
