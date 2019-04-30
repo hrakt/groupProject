@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +16,7 @@
 
 
             <form class="register-box"  action="/auth/register" method="POST">
-                    <input type="text" name="email" placeholder="Email" required><br/>
+                    <input type="text" id = "email-box" name="email" placeholder="Email" required><br/>
 
                     <input type="text" name="firstName" placeholder="First Name" required> <br/>
                     <input type="text" name="lastName" placeholder="Last Name" required> <br/>
@@ -39,3 +40,4 @@
     </script>
 </html>
 
+<%- include('./partials/footer.ejs')%>
