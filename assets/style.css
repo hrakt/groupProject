@@ -176,16 +176,17 @@ input:valid~label {
 }
 
 .sign-up-btn {
-    background-color: #0DF205;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
     border: none;
     border-radius: -6px;
-    height: 150px;
-    width: 800px;
-    font-size: 16px;
-    margin: auto;
+    height: 125px;
+    width: 500px;
+    font-size: 36px;
+    margin-left: auto;
+    font-family: 'Raleway', san-serif;
 }
 
-.register-btn:hover {
+.register-btn:hover, .sign-up-btn:hover {
     color: white;
     cursor: pointer;
 }
@@ -196,12 +197,8 @@ input:valid~label {
     text-align: center;
 }
 
-<<<<<<< HEAD
-.register-container p a {
-=======
 
 .register-container p a{
->>>>>>> master
     font-weight: 700;
     text-decoration: none;
 }
@@ -217,11 +214,6 @@ input:valid~label {
     margin: auto;
     
 }
-
-
-
-
-
 
 .loader-container {
     top: 0;
