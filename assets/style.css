@@ -79,12 +79,17 @@ html, body {
 .register-page {
     display: flex;
     height: 100%;
+    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
 }
 
 .register-container {
-    /* padding-top: 30px; */
-    flex: 50%;
-    padding: 60px;
+    background-color: white;
+    width: 48%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
 }
 
 .register-h {
@@ -92,9 +97,12 @@ html, body {
     font-weight: 700;
     text-align: center;
     font-size: 40px;
-    padding-left: 60px;
-    padding-top: 14px;
-    padding-bottom: 35px;
+    padding-top: 75px;
+    padding-bottom: 48px;
+}
+
+::placeholder{
+  opacity: 0.8;
 }
 
 .register-box {
@@ -102,7 +110,7 @@ html, body {
     font-size: 17px;
     display: flex;
     flex-direction: column;
-    padding-left: 60px;
+    width: 55%;
 }
 
 label {
@@ -166,7 +174,7 @@ input:valid~label {
 
 .register-container p {
     font-size: 14px;
-    padding-top: 8%;
+    padding-top: 18%;
     text-align: center;
 }
 
