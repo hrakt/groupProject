@@ -93,6 +93,8 @@ html, body {
     padding-top: 60px;
   }
 
+
+/* Register page */
 .register-page {
     display: flex;
     height: 100%;
@@ -201,6 +203,9 @@ input:valid~label {
     text-decoration: none;
 }
 
+
+/* log-in page */
+
 .login-page {
     display: flex;
     height: 100%;
@@ -213,7 +218,48 @@ input:valid~label {
     
 }
 
+.login-h {
+    font-family: 'Montserrat', san-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 40px;
+}
 
+.login-box input{
+    font-family: 'Raleway', san-serif;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input:focus{
+    border-bottom: 2px solid #0DF205;
+    -webkit-animation: mymove 3.5s infinite;
+    animation: mymove 3.5s infinite;
+}
+
+@-webkit-keyframes mymove{
+    50% {border-bottom-color: lightblue;}
+}
+
+@keyframes mymove{
+    50% {border-bottom-color: lightblue;}
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #6E8EFB, #A777E3);
+    border: none;
+    height: 50px;
+    width: 100%;
+    font-size: 19px;
+    margin: auto;
+}
+
+.login-btn:hover{
+    color: white;
+    cursor: pointer;
+}
 
 
 
