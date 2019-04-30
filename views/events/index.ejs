@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs')%>
 <div class="event-container">
 
-    <div><h1 class ="events-header">Events Index Page</h1></div>
+    <div class ="events-header"><h1>Events Index Page</h1></div>
     
 
     <div class="events-list">
@@ -10,7 +10,7 @@
     <%}%>
 
     <% for(let i = 0;i<events.length;i++){%>
-
+          <form action="/users/<%=events[i]._id%>" method="POST">
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a>
         <% if (user &&!user.events.filter(e => e.toString() === events[i]._id.toString()).length > 0) { %>
                     <button>Add Event</button>
@@ -18,7 +18,15 @@
                     
         </form>
         
+        
     <%}%>
+    </div>
+    <div class="eventlist-img-container">
+    <% for(let i = 0;i<events.length;i++){%>
+        <div class="<%=events[i].name%>" 
+        style="position:<%if(i%2==0){%>absolute<%}else{%>relative<%}%>;z-index:-1">
+        <img src="<%=events[i].picture%>" alt="" height="500px"></div>
+        <%}%>
     </div>
 </div>
 

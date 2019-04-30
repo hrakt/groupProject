@@ -4,7 +4,7 @@ setTimeout(function () {
     document.querySelector('.loader-container').classList.add('hidden')
 }, 4000)
 
-<<<<<<< HEAD
+
 
 // document.addEventListener('scroll', function(){
 //     const scrollTop = document.scrollTop
@@ -19,7 +19,9 @@ setTimeout(function () {
 //     document.querySelector('.home-bottom-text').innerHTML = pageYOffset + 'px';
 //   });
 
-=======
+
+
+
 window.onscroll = function() {stickyNav()};
 
 const navbar = document.querySelector('.nav-not-logged');
@@ -33,7 +35,7 @@ function stickyNav() {
     navbar.classList.remove("sticky");
   }
 }
->>>>>>> 3663b21f9df62c3de4f1234c27a51bf925a43e74
+
 
 const exploreText = document.querySelector('.explore-static');
 const exploreImage = document.querySelector('.home-img-explore')

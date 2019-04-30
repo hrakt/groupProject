@@ -15,7 +15,6 @@ router.get('/login',(req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    req.session.logged       = true;
     res.render('register.ejs',{user:req.session.usersDbId});
 })
 
