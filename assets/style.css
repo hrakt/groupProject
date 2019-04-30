@@ -9,6 +9,68 @@ html, body {
     /* background-color: white; */
 }
 
+
+
+.event-container{
+    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    display:flex;
+    flex-direction: column;
+
+    height:87%;
+    align-items: center;
+    font-family: 'Montserrat', san-serif;
+    font-size: 50px;
+}
+
+.events-list{
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.events-list a {
+    color: white;
+    cursor: pointer;
+    
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+.events-list a, a:visited {
+  text-decoration: none;
+  position: relative;
+  color: #069;
+}
+.events-list a:after, a:visited:after {
+  content: '';
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background: #069;
+  transition: 0.2s;
+}
+.events-list a:hover:after, a:visited:hover:after {
+  width: 100%;
+}
+  
+.events-list a:hover {
+    color: #0DF205;
+    cursor: pointer;
+}
+.events-header h1{
+    font-size: 100px;
+    color: white;
+      
+}
+.events-header{
+    top: 10%;
+    left: 25%;
+    
+}
+
 /* Style the navbar */
 .nav-not-logged, .nav-logged{
     overflow: hidden;
@@ -296,4 +358,15 @@ input:valid~label {
 .events{
     height: 100px;
     overflow:scroll;
+}
+
+
+@keyframes fadein {
+    0% { opacity: 0;}
+    100% { opacity: 100;}
+}
+
+@keyframes fadeout {
+    0% { opacity: 100;}
+    100% { opacity: 0;}
 }

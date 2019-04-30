@@ -13,7 +13,7 @@ const userController    = require('./controllers/users');
 const eventController   = require('./controllers/events');
 const authController    = require('./controllers/authControllers')
 
-const Users     = require('./models/users');
+const Users             = require('./models/users');
 
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -23,6 +23,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
 app.use('/assets', express.static('assets'))
 
 
@@ -30,13 +31,19 @@ app.use('/assets', express.static('assets'))
 
 app.get('/', async(req, res) => {
     let foundUser = null;
-    if(req.session.logged == true){
-        foundUser     = await Users.findById(req.session.usersDbId);
+    try{
+        if(req.session.logged == true){
+            console.log('it thinks its logged in ');
+            foundUser     = await Users.findById(req.session.usersDbId);
+        }
+        res.render('home.ejs', {
+            logged: req.session.logged,
+            user: foundUser
+        });
+    }catch(err){
+        res.send(err);
     }
-    res.render('home.ejs', {
-        logged: req.session.logged,
-        user: foundUser
-    });
+    
     
 })
 
