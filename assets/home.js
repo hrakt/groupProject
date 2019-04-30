@@ -4,17 +4,12 @@ setTimeout(function () {
     document.querySelector('.loader-container').classList.add('hidden')
 }, 4000)
 
-
-// When the user scrolls the page, execute myFunction 
 window.onscroll = function() {stickyNav()};
 
-// Get the navbar
 const navbar = document.querySelector('.nav-not-logged');
 
-// Get the offset position of the navbar
 const sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyNav() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
@@ -22,39 +17,6 @@ function stickyNav() {
     navbar.classList.remove("sticky");
   }
 }
-
-// // When the user scrolls the page, execute myFunction 
-// window.onscroll = function() {myFunction()};
-
-// // Get the navbar
-// var navbar = document.getElementById("navbar");
-
-// // Get the offset position of the navbar
-// var sticky = navbar.offsetTop;
-
-// // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-// function myFunction() {
-//   if (window.pageYOffset >= sticky) {
-//     navbar.classList.add("sticky")
-//   } else {
-//     navbar.classList.remove("sticky");
-//   }
-// }
-
-
-// document.addEventListener('scroll', function(){
-//     const scrollTop = document.scrollTop
-//     const scrollBottom = scrollTop + window.innerHeight
-//     const pageBottom = document.innerHeight
-//     const differ = pageBottom - scrollBottom
-//     const opacity = 1 - differ / 300
-//     document.querySelector('.fade-bg').css('opacity', opacity)
-// })
-
-// window.addEventListener('scroll', function() {
-//     document.querySelector('.home-bottom-text').innerHTML = pageYOffset + 'px';
-//   });
-
 
 const exploreText = document.querySelector('.explore-static');
 const exploreImage = document.querySelector('.home-img-explore')
