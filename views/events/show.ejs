@@ -1,25 +1,42 @@
 <%- include('../partials/header.ejs', {logged})%>
+    <div class="event-show-container">
+        <div clas="event-show-header">
+            <h1><%=events.name%></h1>
+        </div>
+        
+        <div class="event-show-header-container">
+        <div class="event-show-left-header">
+        <p><%=events.venue%><br /></p>
+        <span class="data"><%=events.date.toDateString()%><br />
+        <p id="countdown-timer"></p> 
+        </div>
 
-    <h1>Show Page for <%=events.name%></h1>
-    <ul>
-        <li>Lineup: <%=events.artists%></li>
-        <li>Date: <span class="data"><%=events.date%></span></li>
-        <li>Location: <%=events.venue%></li>
-        <li>Pictures: <%=events.picture%></li>
-    </ul>
-
-    <div class="dropdown">
-        <button class="dropbtn">Users attending(<%=attendees.length%>)</button>
-        <div class="dropdown-content">
+        <div class="event-show-right-header">
+            <button>Attending(<%=attendees.length%>)</button>
             <% for(let i=0;i<attendees.length;i++){%>
-                <a href="#"><%=attendees[i].firstName%></a>
+                <img src="<%=attendees[i].profilePic%>" width="50px">
 
             <%}%>
         </div>
-    </div>
+        </div>
+        
+        <div class="event-show-body-container">
+        <div class="event-show-body-left">
+            <img src="<%=events.picture%>" width="300px">
+        </div>
+        <div class="event-show-body-right">
+            <p>Lineup: <%=events.artists%></p>
+        </div>
+        </div>
 
-    <h2>Countdown Timer</h2>
-    <p id="countdown-timer"></p> 
+        <div class="event-show-bottom">
+            <form action="/users/<%=events._id%>" method="POST">
+            <% if (user &&!user.events.filter(e => e.toString() === events._id.toString()).length > 0) { %>
+            <button>Add Event</button>
+        <% } %>
+        </form>
+        </div>
+    </div>
 
     <script> 
         let time = document.querySelector(".data").innerText
@@ -45,4 +62,5 @@
         // let dead = document.querySelector(".deadline")
         // dead.innerText = deadline;
     </script> 
+    </div>
 <%- include('../partials/footer.ejs')%>

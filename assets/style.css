@@ -24,13 +24,12 @@ button:hover {
     cursor: pointer;
 } */
 
-ul {
+ul{
     text-align: center;
     list-style: none;
 }
 
-
-.event-container{
+.event-container, .event-show-container{
     background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
     display:flex;
     flex-direction: column;
@@ -125,7 +124,7 @@ ul {
     /* height: 8%; */
     font-family: 'Raleway', san-serif;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 19px;
     color: #fff;
     padding-right: 30px;
     text-decoration: none;
@@ -470,6 +469,29 @@ input:valid~label {
     text-decoration: none;
     cursor: pointer;
   }
+
+.event-show-header-container, .event-show-body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 24px;
+}
+
+.event-show-left-header, .event-show-right-header {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+}
+
+.event-show-body-left, .event-show-body-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* for the events in index page */
 .events{
