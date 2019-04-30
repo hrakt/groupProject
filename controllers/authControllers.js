@@ -53,15 +53,15 @@ router.post('/login', async(req,res)=>{
 
         
         if(foundUser){
-            if(foundUser.email == "admin" && bcrypt.compareSync(req.body.password, foundUser.password)){
+            if(foundUser.email == "admin@admin.com" && bcrypt.compareSync(req.body.password, foundUser.password)){
                 console.log('im hitting here')
                 res.redirect('/events/add')
 
             }else{
                 if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
-                    req.session.logged       = true;
-                    req.session.usersDbId    = foundUser._id;
-                    res.locals.user = foundUser
+                    req.session.logged          = true;
+                    req.session.usersDbId       = foundUser._id;
+                    res.locals.user             = foundUser
     
                     console.log(foundUser, "=========");
                     res.redirect(`/users/${foundUser._id}`);

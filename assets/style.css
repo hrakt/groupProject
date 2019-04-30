@@ -9,6 +9,43 @@ html, body {
     /* background-color: white; */
 }
 
+
+
+.event-container{
+    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    display:flex;
+    height:100%;
+    align-items: center;
+    font-family: 'Montserrat', san-serif;
+    font-size: 50px;
+}
+
+.events-list{
+    position: relative;
+    left:40%;
+    display: flex;
+    
+}
+
+.events-list a {
+    color: white;
+    cursor: pointer;
+    
+}
+.events-list a:hover {
+    color: #0DF205;
+    cursor: pointer;
+}
+.events-header{
+    font-size: 100px;
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    
+}
+
+
 /* Style the navbar */
 .nav-not-logged, .nav-logged{
     overflow: hidden;
