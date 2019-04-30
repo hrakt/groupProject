@@ -4,6 +4,24 @@ setTimeout(function () {
     document.querySelector('.loader-container').classList.add('hidden')
 }, 4000)
 
+
+
+// document.addEventListener('scroll', function(){
+//     const scrollTop = document.scrollTop
+//     const scrollBottom = scrollTop + window.innerHeight
+//     const pageBottom = document.innerHeight
+//     const differ = pageBottom - scrollBottom
+//     const opacity = 1 - differ / 300
+//     document.querySelector('.fade-bg').css('opacity', opacity)
+// }
+
+// window.addEventListener('scroll', function() {
+//     document.querySelector('.home-bottom-text').innerHTML = pageYOffset + 'px';
+//   });
+
+
+
+
 window.onscroll = function() {stickyNav()};
 
 const navbar = document.querySelector('.nav-not-logged');
@@ -17,6 +35,7 @@ function stickyNav() {
     navbar.classList.remove("sticky");
   }
 }
+
 
 const exploreText = document.querySelector('.explore-static');
 const exploreImage = document.querySelector('.home-img-explore')
