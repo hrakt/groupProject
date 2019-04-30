@@ -1,10 +1,11 @@
 <%- include('../partials/header.ejs')%>
-
-    <h1>User Index</h1><br/>
-    <h3>Hey, <%=user.firstName%>!</h3>
-    <a href="../users/<%=user._id%>/edit"><button>Edit Profile</button></a><br/>
-
-
+    <div class="user-index-container">
+        <div class="user-profile">
+            <h1>User Index</h1><br/>
+            <h3>Hey, <%=user.firstName%>!</h3>
+            <a href="../users/<%=user._id%>/edit"><button>Edit Profile</button></a><br/>
+        </div>
+    <div class="user-event">
     <h2>User's Events</h2>
     <a href="../events/index"><button>Add an event</button></a><br/>
     <ul>
@@ -17,5 +18,7 @@
         </li>
     <%}%>
     </ul>
+    </div>
+    </div>
 
 <%- include('../partials/footer.ejs')%>
