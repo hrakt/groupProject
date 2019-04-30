@@ -326,7 +326,7 @@ html, body {
     99% {transform: translateY(10px)} */
     100% { transform: translateX(0px); transform: translateY(0px); opacity: 100; color: lime;}
   }
-  
+
   @keyframes fadeinout {
     0% { opacity: 0; }
     25% { opacity: 50; }
