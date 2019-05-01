@@ -1,20 +1,32 @@
 <%- include('../partials/header.ejs')%>
     <div class="user-index-container">
         <div class="user-profile">
-            <h1>Hey, <%=user.firstName%>!</h1>
-             <img src="<%=user.profilePic%>" width="50px">
-            <a href="../users/<%=user._id%>/edit"><button>Edit Profile</button></a><br/>
+            <h1>Hey, <%=user.firstName%>!</h1><br />
+            <%if (user.profilePic == null) {%>
+                <img src="https://media.telkom.co.za/today/media/photologue/photos/cache/edit_profile_FbXAS5U_picture_srcset_x400.png" width="50px">
+            <% } else { %>
+                <img src="<%=user.profilePic%>" width="50px"> <br />
+            <% } %>
+            <p>update your profile</p><br />
+            <form action="/users/edit/<%=user._id%>?_method=PUT" method="POST">
+            <input type="text" name="email" id="email-box" value="<%=user.email%>" placeholder="email" onclick="this.value=''" required> <br/>
+            <input type="text" name="firstName" value="<%=user.firstName%>" placeholder="first name" onclick="this.value=''" required> <br/>
+            <input type="text" name="lastName" value="<%=user.lastName%>" placeholder="last name" onclick="this.value=''" required> <br/>
+            <input type="text" name="profilePic" value="Profile Pic Link" placeholder="profile photo" onclick="this.value=''"><br/>
+            <input type="password" name="password" placeholder="Password" placeholder="password" onclick="this.value=''" required> <br />
+        <button class="register-btn" type="submit">Update Profile</button><br />
+        </form>
         </div>
     <div class="user-event">
-    <h2>User's Events</h2>
-    <a href="../events/index"><button>Add an event</button></a><br/>
+    <h1>Your Events</h1>
+    <a href="../events/index"><button>Add event</button></a><br/>
     <ul>
     <%for(let i=0;i<events.length;i++){%>
         <li>
             <a href="../events/<%=events[i]._id%>"><%=events[i].name%></a><br />
-            <img src="<%=events[i].picture%>" alt="event-photo" width="100px">
+            <img src="<%=events[i].picture%>" alt="event-photo" width="100px"><br />
             <form action="/users/<%=events[i]._id%>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
+                <button type="submit">Delete</button><br />
             </form>
         </li>
     <%}%>
