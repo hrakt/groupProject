@@ -1,25 +1,30 @@
 <%- include('../partials/header.ejs')%>
-
-    <h1>Event Add Page</h1>
-    <form action="/events/add" method="POST">
-        <input type="text" name="name" placeholder="Event Name"> <br/>
-        <input type="text" name="artists" placeholder="Artist"> <br/>
-        <input type="datetime-local" name="date" placeholder="Date"> <br/>
-        <input type="text" name="playlist" placeholder="Playlist"> <br/>
-        <input type="text" name="venue" placeholder="Venue"> <br/>
-        <input type="text" name="picture" placeholder="Picture"> <br/>
-        <button type="submit">Create</button>
-    </form>
-    <section>
-    <h2> List of all Events</h2>
+    <div class="event-add-container">
+        <div class="admin-profile">
+            <h1>Hey, Admin</h1><br />
+            <p> Create a Event </p>
+            <form action="/events/add" method="POST">
+                <input type="text" name="name" placeholder="Event Name"> <br/>
+                <input type="text" name="artists" placeholder="Artist"> <br/>
+                <input type="datetime-local" name="date" placeholder="Date"> <br/>
+                <input type="text" name="playlist" placeholder="Playlist"> <br/>
+                <input type="text" name="venue" placeholder="Venue"> <br/>
+                <input type="text" name="picture" placeholder="Picture"> <br/>
+                <button class="register-btn" type="submit">Create</button>
+            </form>
+        </div>
+    <div class="admin-event">
+        <h1> List of all Events</h1><br />
         <% for(let i = 0;i<events.length;i++){%>
         <a href="/events/<%=events[i]._id%>"><%=events[i].name%> </a><br />
-        <a href="/events/<%=events[i]._id%>/edit"><button>Edit</button></a><br />
+        <img src="<%=events[i].picture%>" alt="event-photo" width="100px"><br />
+        <a href="/events/<%=events[i]._id%>/edit"><button class="register-btn" type="submit">Edit</button></a><br />
          <section>
           <form action="/events/<%=events[i]._id%>?_method=DELETE" method="POST">
-              <button type="submit" value="Delete Event"/>Delete</button>
+              <button class="register-btn" type="submit" value="Delete Event"/>Delete</button>
           </form>
             <%}%>
-    </section><br/>
-    <a href="/auth/logout">Logout of Admin</a>
+            </section><br/>
+        </div>
+    </div>
 <%- include('../partials/footer.ejs')%>
