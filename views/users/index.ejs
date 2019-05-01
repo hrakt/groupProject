@@ -2,7 +2,11 @@
     <div class="user-index-container">
         <div class="user-profile">
             <h1>Hey, <%=user.firstName%>!</h1>
-             <img src="<%=user.profilePic%>" width="50px">
+            <%if (user.profilePic == null) {%>
+                <img src="https://media.telkom.co.za/today/media/photologue/photos/cache/edit_profile_FbXAS5U_picture_srcset_x400.png" width="50px">
+            <% } else { %>
+                <img src="<%=user.profilePic%>" width="50px">
+            <% } %>
             <a href="../users/<%=user._id%>/edit"><button>Edit Profile</button></a><br/>
         </div>
     <div class="user-event">
