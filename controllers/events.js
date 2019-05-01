@@ -86,10 +86,12 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res)=>{
     try {
-    const foundEvents = await Events.findById(req.params.id);
+    const foundEvents   = await Events.findById(req.params.id);
+    const foundUser     = await Users.findById(req.session.usersDbId);
     res.render('events/edit.ejs', {
         events: foundEvents,
-        logged: req.session.logged
+        logged: req.session.logged,
+        user: foundUser
     })
     // res.redirect('events/add')
     } catch (err) {
