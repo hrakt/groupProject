@@ -25,10 +25,6 @@ app.use(session({
     saveUninitialized: false
 }));
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ae681f060d011a080a7cb2ab1435ace5be5e61c6
 app.use('/assets', express.static('assets'))
 
 
