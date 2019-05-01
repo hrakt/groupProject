@@ -4,6 +4,7 @@ let validEmail = true;
 let emailBox = document.getElementById("email-box");
 
 let doThing = () =>{
+    console.log('grabbed email box');
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailBox.value)) {
         emailBox.style.color = 'GREEN';
         validEmail = true;
@@ -13,6 +14,7 @@ let doThing = () =>{
     }
     
 }
+
 emailBox && emailBox.addEventListener('change', doThing);
 
 
@@ -26,6 +28,25 @@ validateMyForm = () => {
     }
 }
 
+const eventPics = document.querySelector('.eventlist-img-container');
+const eventList = document.querySelector('.events-list');
+
+
+
+eventList && eventList.addEventListener('mouseover', function(e) {
+    console.log(e.target.innerHTML,"--- this is the sibling");
+    document.querySelector(`.${e.target.innerHTML}`).style.zIndex = '0';
+    document.querySelector(`.${e.target.innerHTML}`).style.animation = 'fadein 300ms linear 1';
+    e.target.addEventListener('mouseout', function() {
+    document.querySelector(`.${e.target.innerHTML}`).style.animation = 'fadeout 300ms linear 1';
+    setTimeout(() => {
+        document.querySelector(`.${e.target.innerHTML}`).style.zIndex = '-1';
+    }, 200);
+    // exploreImage.style.zIndex = '0';
+    // exploreImage.style.animation = '';
+    })
+
+})
 
 let openModal = () =>{
     var modal = document.getElementById('myModal');

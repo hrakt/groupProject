@@ -1,12 +1,29 @@
-<%- include('partials/header.ejs')%>
 
-    <h1>Login</h1>
-    <form action="/auth/login" method="POST">
-        <input type="text" name="email" placeholder="Enter you email address">
-        <input type="password" name="password" placeholder="Enter your password">
-        <button type="submit">Login</button>
-    </form>
-    <a href="/auth/register"><button>Register</button></a><br/>
-    
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Raleway:400,500,600,700,800,900" rel="stylesheet">
+        <link href="/assets/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <div class="login-page">
+        <div class="login-container">
+            <h1 class="login-h">Login</h1>
+        <form class="login-box" action="/auth/login" method="POST">
 
-<%- include('partials/footer.ejs')%>
+                <input type="text" name="email" id="email" placeholder="Email"><br/>
+                <input type="password" name="password" id="password" placeholder="Password"><br/>
+                <input type="text" name="email" placeholder="Email"><br/>
+                <input type="password" name="password" placeholder="Password"><br/>
+
+            <button class="login-btn" type="submit">Login</button><br/>
+        </form><br/>
+        
+        <p>New user? <a href="/auth/register">Create an account!</a></p><br/>
+        </div>
+    </div>
+    </body>
+</html>

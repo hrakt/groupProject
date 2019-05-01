@@ -7,18 +7,14 @@ const User      = require('../models/users');
 
 router.get('/login',(req, res) => {
 
-    if(req.session.logged != true){
+
         res.render('login.ejs', {
             logged: req.session.logged
         })
-    }else{
-        console.log("please login before continuing");
-        res.redirect(`/users/${req.session.usersDbId}`);
-    }
+
 })
 
 router.get('/register', (req, res) => {
-    req.session.logged       = true;
     res.render('register.ejs',{user:req.session.usersDbId});
 })
 
@@ -53,18 +49,19 @@ router.post('/register', async(req,res)=>{
 router.post('/login', async(req,res)=>{
     try{
         const foundUser = await User.findOne({"email": req.body.email});
-
-        
         if(foundUser){
-            if(foundUser.email == "admin" && bcrypt.compareSync(req.body.password, foundUser.password)){
+            if(foundUser.email == "admin@admin.com" && bcrypt.compareSync(req.body.password, foundUser.password)){
+                req.session.logged = true;
+                req.session.usersDbId       = foundUser._id;
                 console.log('im hitting here')
-                res.redirect('/events/add')
+                res.redirect('/events/add',
+                )
 
             }else{
                 if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
-                    req.session.logged       = true;
-                    req.session.usersDbId    = foundUser._id;
-                    res.locals.user = foundUser
+                    req.session.logged          = true;
+                    req.session.usersDbId       = foundUser._id;
+                    res.locals.user             = foundUser
     
                     console.log(foundUser, "=========");
                     res.redirect(`/users/${foundUser._id}`);

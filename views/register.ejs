@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,21 +13,17 @@
         <div class="register-container">
                 <h1 class="register-h">Create account</h1>
 
-            <form class="register-box"  action="/auth/register" method="POST">
-                    <input type="text" name="email" id="email-box" placeholder="Email Address" required> <br/>
 
-            <form class="register-box" onsubmit="event.preventDefault(); validateMyForm();" action="/auth/register" method="POST">
-                    <input type="text" name="email" placeholder="Email" required><br/>
+
+            <form class="register-box"  action="/auth/register" method="POST">
+                    <input type="text" id = "email-box" name="email" placeholder="Email" required><br/>
 
                     <input type="text" name="firstName" placeholder="First Name" required> <br/>
                     <input type="text" name="lastName" placeholder="Last Name" required> <br/>
                     <input type="password" name="password" placeholder="Password" required> <br/>
-                <button class="register-btn" type="submit">Let's do this</button><br/>
+                <button class="register-btn" type="submit">Sign Up!</button><br/>
                 <p>Already a user? <strong><a href="/auth/login">Log in</a></strong></p>
             </form>
-        </div>
-        <div class="register-container" style="background-color: #625192;">
-            <img src=""/>
         </div>
     </div>
     

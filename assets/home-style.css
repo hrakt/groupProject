@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    /* background-color: white; */
+}
+
+/* Style the navbar */
+.nav-not-logged, .nav-logged{
+    overflow: hidden;
+    background-color: #892cff;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 8%;
+}
+
+.footer, .foot-home {
+    background-color: #892cff;
+    display: flex;
+    height: 5%;
+    font-size: 36px;
+    color: #fff;
+}
+
+.foot-home a, .footer a {
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+  /* Navbar links */
+  .nav-not-logged a, .nav-logged a {
+    display: flex;
+    flex-direction: row-reverse;
+    /* align-content: center; */
+    align-items: center;
+    overflow: hidden;
+    /* background-color: #892cff; */
+    /* height: 8%; */
+    font-family: 'Raleway', san-serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: #fff;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+.nav-logged a:hover, .nav-not-logged a:hover {
+    color: #0DF205;
+    cursor: pointer;
+}
+
+.content {
+    padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+    
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .content {
+    padding-top: 60px;
+}
+
+.sign-up-btn {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    border-radius: -6px;
+    height: 125px;
+    width: 500px;
+    font-size: 36px;
+    margin-left: auto;
+    font-family: 'Raleway', san-serif;
+}
+
+.sign-up-btn:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.loader-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    z-index: 3;
+    transition: opacity 1s;
+    /* padding-left: 60px; */
+}
+
+
+.loader-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.eye-text-container, .home-eye-text-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* padding-left: 60px; */
+    z-index: 1;
+}
+
+.eye-container {
+    justify-content: center;
+    display: flex;
+    /* margin-left: -100px; */
+    flex-direction: column;
+    animation: fadein 4s ease-in-out 1;
+    /* animation-fill-mode: forwards; */
+    /* opacity: 0; */
+}
+
+.eye-gif {
+    background-color: #fff;
+    margin-left: -15%;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background: rgb(199,0,255);
+    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    /* background-color: #0DF205; */
+    justify-content: center;
+}
+
+.explore-h1, .your-h1, .else-h1 {
+    opacity: 0;
+    text-align: left;
+    /* border: #fff solid 4px; */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    font-family: 'Montserrat', san-serif;
+    /* justify-content: center; */
+}
+
+.explore-h1 {
+    animation: textltr .5s ease-in-out 1s 1;
+    animation-fill-mode: forwards;
+}
+
+.your-h1 {
+    animation: textltr .5s ease-in-out 2s 1;
+    animation-fill-mode: forwards;
+}
+
+.else-h1 {
+    animation: textltr .5s ease-in-out 3s 1;
+    animation-fill-mode: forwards;
+}
+
+.explore-h1 h1, .your-h1 h1, .else-h1 h1,
+.explore-static h1, .your-static h1, .else-static h1 {
+    font-family: 'Montserrat', san-serif;
+    transition-duration: 500ms;
+    transition-property: color;
+}
+
+.explore-h1 h1:hover, .your-h1 h1:hover, .else-h1 h1:hover {
+    color: limegreen;
+    cursor: pointer;
+}
+
+.explore-static h1:hover, .your-static h1:hover, .else-static h1:hover {
+    color: limegreen;
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.home-bottom-cont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+}
+
+.explore-static, .your-static, .else-static,
+.home-bottom-text {
+    text-align: left;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    font-family: 'Montserrat', san-serif;
+}
+
+.home-bottom-text {
+    text-align: right;
+    flex: 1;
+    color: limegreen;
+    /* align-content: center; */
+    /* align-items: center; */
+    font-size: 60px;
+    margin-top: -15%;
+    margin-right: 6%;
+    font-family: 'Montserrat', san-serif;
+}
+
+.sign-up-but {
+    margin: auto;
+    margin-top: 3%;
+}
+
+.sign-up-bot {
+    margin: auto;
+    margin-top: 3%;
+}
+
+.home-img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -10%;
+}
+
+.home-img-container img {
+    max-width: 800px;
+}
+
+.home-img {
+    position: absolute;
+    z-index: 0;
+}
+
+.home-img-explore {
+    position: absolute;
+    z-index: -1;
+}
+
+.home-img-your {
+    position: relative;
+    z-index: -2;
+}
+
+.home-img-else {
+    position: absolute;
+    z-index: -3;
+}
+
+.home-bottom-container {
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    background: #000;
+    /* background: rgb(94, 255, 0); */
+    /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
+    /* background-color: #0DF205; */
+    /* justify-content: center; */
+    position: relative;
+}
+
+.card-img-container {
+    /* background-color: #fff; */
+    /* height: 10%; */
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: -80px; */
+    /* margin: 10px; */
+    margin-top: -100px;
+    /* padding: 10px; */
+    justify-content: center;
+    z-index: 2;
+}
+
+.card-img-container-left {
+    display: flex;
+    flex-direction: row;
+    /* margin-top: -10%; */
+    position: absolute;
+    top: -20%;
+    left: -13%;
+    z-index: 1;
+    /* right: 100%; */
+}
+
+.card-img-container-right {
+    display: flex;
+    flex-direction: row;
+    /* margin-top: -10%; */
+    position: absolute;
+    top: -20%;
+    right: -13%;
+    z-index: 1;
+    /* right: 100%; */
+}
+
+.home-img-flyer1, .home-img-flyer2, .home-img-flyer3 {
+    margin: 10px;
+    box-shadow: -7px 10px 4px 0px #00000030;
+}
+
+.sign-up-but {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex: 1;
+}
+
+  
+@keyframes textltr {
+    0% { transform: translateX(-100px); opacity: 0; color: #fff; }
+    /* 90% {transform: translateY(-10px)}
+    93% {transform: translateY(10px)}
+    96% {transform: translateY(-10px)}
+    99% {transform: translateY(10px)} */
+    100% { transform: translateX(0px); transform: translateY(0px); opacity: 100; color: lime;}
+  }
+
+  @keyframes fadeinout {
+    0% { opacity: 0; }
+    25% { opacity: 50; }
+    40% { opacity: 0; }
+    65% { opacity: 75; }
+    85% { opacity: 0; }
+    95% { opacity: 100; }
+    100% { opacity: 0; }
+  }
+
+@keyframes fadein {
+    0% { opacity: 0;}
+    100% { opacity: 100;}
+}
+
+@keyframes fadeout {
+    0% { opacity: 100;}
+    100% { opacity: 0;}
+}

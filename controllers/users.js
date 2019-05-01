@@ -2,7 +2,7 @@ const express   = require('express');
 const router    = express.Router();
 const Users     = require('../models/users');
 const Events    = require('../models/events');
-const bcrypt = require("bcryptjs")
+const bcrypt    = require("bcryptjs")
 
 router.get('/', (req, res) => {
     res.send('users index')
@@ -39,7 +39,7 @@ router.get('/:id/edit' , async(req,res) =>{
 })
 
 router.put('/edit/:id', async (req, res) => {
-    req.body.password       = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+    req.body.password       = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     try{
     const updatedUser       = await Users.findByIdAndUpdate(req.params.id, req.body, {new: true});
     console.log(updatedUser + 'updated users PUT')
@@ -54,10 +54,10 @@ router.post('/:id', async(req,res)=>{
     const foundEvent        = await Events.findById(req.params.id);
 
 
-    currentUser.events.push(foundEvent);
+    await currentUser.events.push(foundEvent);
     currentUser.save();
     console.log(currentUser.events);
-    foundEvent.users.push(req.session.usersDbId);
+    await foundEvent.users.push(req.session.usersDbId);
     foundEvent.save();
     console.log(foundEvent, "<=------ this is the found event")
     res.redirect(`/users/${currentUser._id}`);

@@ -17,10 +17,12 @@ function checkLogin(req,res,next){
 
 router.get('/add' , async(req,res) =>{
     try{
-        const foundEvents = await Events.find({});
+        const foundEvents   = await Events.find({});
+        const foundUser     = await Users.findById(req.session.usersDbId);
         res.render('events/add.ejs', {
-            events: foundEvents,
-            logged: req.session.logged
+            events:     foundEvents,
+            logged:     req.session.logged,
+            user:       foundUser
         });
     }catch(err){
         res.send(err);
@@ -49,7 +51,6 @@ router.get('/index', async(req,res)=>{
         const foundEvents   = await Events.find({});
         const foundUser     = await Users.findById(req.session.usersDbId);
 
-        console.log(foundUser)
         res.render('events/index.ejs',{
             events: foundEvents,
             user: foundUser,

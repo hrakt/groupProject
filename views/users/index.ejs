@@ -1,21 +1,24 @@
 <%- include('../partials/header.ejs')%>
-
-    <h1>User Index</h1><br/>
-    <h3>Hey, <%=user.firstName%>!</h3>
-    <a href="../users/<%=user._id%>/edit"><button>Edit Profile</button></a><br/>
-
-
+    <div class="user-index-container">
+        <div class="user-profile">
+            <h1>Hey, <%=user.firstName%>!</h1>
+            <a href="../users/<%=user._id%>/edit"><button>Edit Profile</button></a><br/>
+        </div>
+    <div class="user-event">
     <h2>User's Events</h2>
     <a href="../events/index"><button>Add an event</button></a><br/>
     <ul>
     <%for(let i=0;i<events.length;i++){%>
         <li>
-            <a href="../events/<%=events[i]._id%>"><%=events[i].name%></a>
+            <a href="../events/<%=events[i]._id%>"><%=events[i].name%></a><br />
+            <img src="<%=events[i].picture%>" alt="dominator-photo" width="100px">
             <form action="/users/<%=events[i]._id%>?_method=DELETE" method="POST">
                 <button type="submit">Delete</button>
             </form>
         </li>
     <%}%>
     </ul>
+    </div>
+    </div>
 
 <%- include('../partials/footer.ejs')%>
