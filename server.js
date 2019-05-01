@@ -8,7 +8,6 @@ const methodOverride    = require('method-override');
 const session           = require('express-session');
 const PORT              = process.env.PORT;
 
-app.set('trust proxy', 1);
 require('./db/db')
 
 const userController    = require('./controllers/users');
@@ -26,14 +25,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.use(function(req,res,next){
-    if(!req.session){
-        return next(new Error('Oh no')) //handle error
-    }
-    next() //otherwise continue
-    });
 
-    
 app.use('/assets', express.static('assets'))
 
 
