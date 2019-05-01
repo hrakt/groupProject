@@ -524,7 +524,7 @@ input:valid~label {
 }
 
 .event-show-header, .events-header {
-  margin-top: 2%;
+  /* margin-top: 2%; */
   display: flex;
   flex-direction: row;
   color: #100F18;
@@ -540,12 +540,16 @@ input:valid~label {
   align-items: center;
 }
 
-.event-show-header-info {
+.event-show-header-info, .event-show-bottom {
   display: flex;
   font-size: 18px;
   flex-direction: row;
   width: 75%;
   text-align: center;
+}
+
+.event-show-bottom p, .event-show-bottom img {
+  margin: 15px;
 }
 
 .event-header-venue, .event-header-date, .event-header-timer {
