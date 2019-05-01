@@ -9,7 +9,7 @@ This website allow users to organize their event schedule, without the hassle of
 
 ### Visit website
 
-[Click to visit!](https://website/here/)
+[Click here to visit!](https://still-taiga-70572.herokuapp.com/)
 
 
 ###### Wireframes
