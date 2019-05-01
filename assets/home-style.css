@@ -142,10 +142,7 @@ html, body {
     display: flex;
     flex-direction: row;
     height: 100%;
-    /* background: rgb(199,0,255);
-    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%); */
     background-color: #100F18;
-    /* background-color: #0DF205; */
     justify-content: center;
 }
 
@@ -153,7 +150,6 @@ html, body {
     opacity: 0;
     text-align: left;
     letter-spacing: 12px;
-    /* border: #fff solid 4px; */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -192,7 +188,6 @@ html, body {
 .explore-static h1:hover, .your-static h1:hover, .else-static h1:hover {
     color: #100F18;
     -webkit-text-stroke: 4px #00F7EE;
-    /* text-decoration: line-through; */
     cursor: pointer;
 }
 
@@ -273,10 +268,6 @@ html, body {
     flex-direction: column;
     height: 85%;
     background: #100F18;
-    /* background: rgb(94, 255, 0); */
-    /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
-    /* background-color: #0DF205; */
-    /* justify-content: center; */
     position: relative;
 }
 
