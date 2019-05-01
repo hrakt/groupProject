@@ -559,7 +559,7 @@ input:valid~label {
 .event-show-body-left, .event-show-body-middle, .event-show-body-right {
   flex: 1;
   display: flex;
-  /* align-items: center; */
+  margin: 0 10px;
   justify-content: center;
 }
 
@@ -570,7 +570,6 @@ input:valid~label {
 .event-show-body-right {
     font-size: 24px;
     line-height: 30px;
-    margin-right: 1%;
     text-overflow: ellipsis;
     text-align: justify;
 }
