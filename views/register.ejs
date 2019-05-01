@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,14 +9,17 @@
         <link href="/assets/style.css" rel="stylesheet">
     </head>
     <body>
+    
     <div class="register-page">
+    
         <div class="register-container">
+        
                 <h1 class="register-h">Create account</h1>
 
 
 
             <form class="register-box"  action="/auth/register" method="POST">
-                    <input type="text" name="email" placeholder="Email" required><br/>
+                    <input type="text" id = "email-box" name="email" placeholder="Email" required><br/>
 
                     <input type="text" name="firstName" placeholder="First Name" required> <br/>
                     <input type="text" name="lastName" placeholder="Last Name" required> <br/>
@@ -24,6 +28,7 @@
                 <p>Already a user? <strong><a href="/auth/login">Log in</a></strong></p>
             </form>
         </div>
+        <div class="register-gradient"></div>
     </div>
     
     <div id="myModal" class="modal">
@@ -39,3 +44,4 @@
     </script>
 </html>
 
+<%- include('./partials/footer.ejs')%>

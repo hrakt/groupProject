@@ -4,6 +4,7 @@ let validEmail = true;
 let emailBox = document.getElementById("email-box");
 
 let doThing = () =>{
+    console.log('grabbed email box');
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailBox.value)) {
         emailBox.style.color = 'GREEN';
         validEmail = true;
@@ -13,6 +14,7 @@ let doThing = () =>{
     }
     
 }
+
 emailBox && emailBox.addEventListener('change', doThing);
 
 
@@ -31,7 +33,7 @@ const eventList = document.querySelector('.events-list');
 
 
 
-eventList.addEventListener('mouseover', function(e) {
+eventList && eventList.addEventListener('mouseover', function(e) {
     console.log(e.target.innerHTML,"--- this is the sibling");
     document.querySelector(`.${e.target.innerHTML}`).style.zIndex = '0';
     document.querySelector(`.${e.target.innerHTML}`).style.animation = 'fadein 300ms linear 1';

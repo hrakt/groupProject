@@ -49,12 +49,13 @@ router.post('/register', async(req,res)=>{
 router.post('/login', async(req,res)=>{
     try{
         const foundUser = await User.findOne({"email": req.body.email});
-
-        
         if(foundUser){
             if(foundUser.email == "admin@admin.com" && bcrypt.compareSync(req.body.password, foundUser.password)){
+                req.session.logged = true;
+                req.session.usersDbId       = foundUser._id;
                 console.log('im hitting here')
-                res.redirect('/events/add')
+                res.redirect('/events/add',
+                )
 
             }else{
                 if(bcrypt.compareSync(req.body.password, foundUser.password) === true){
