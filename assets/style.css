@@ -159,14 +159,61 @@ ul{
   /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
   .sticky + .content {
     padding-top: 60px;
-  }
+}
+
+
+
 
 
 /* Register page */
+
+.register-gradient {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.register-gradient:after, .register-gradient:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  content: "";
+  z-index: -1;
+}
+
+.register-gradient:after {
+  background: radial-gradient(circle, red, transparent);
+  animation: colorSpin 12s linear infinite;
+}
+
+.register-gradient:before {
+  background-color: yellow;
+}
+
+@keyframes colorSpin {
+  25% {
+    transform: translateY(-75%);
+  }
+  50% {
+    transform: translate(-75%, -75%);
+  }
+  75% {
+    transform: translate(-75%, 0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 .register-page {
     display: flex;
     height: 100%;
-    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    /* background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%); */
 }
 
 .register-container {
@@ -255,6 +302,7 @@ input:valid~label {
 
 
 .register-btn:hover { 
+    background: linear-gradient(180deg, #A777E3, #6E8EFB);
     color: white;
     cursor: pointer;
 }
