@@ -32,13 +32,13 @@ ul{
 
 }
 
-}
+
 
 
 .event-container, .event-show-container{
-=======
 
-.event-container{
+
+
 
     background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
     display:flex;
