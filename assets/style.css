@@ -27,23 +27,13 @@ button:hover {
 ul{
     text-align: center;
     list-style: none;
-
-
-
 }
 
-
-
-
 .event-container, .event-show-container{
-
-
-
-
-    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    background-color: #100F18;    
+    color: #fff;
     display:flex;
     flex-direction: column;
-
     height:87%;
     align-items: center;
     font-family: 'Montserrat', san-serif;
@@ -68,8 +58,8 @@ ul{
 .events-list a, a:visited {
   text-decoration: none;
   position: relative;
-  color: #069;
 }
+
 .events-list a:after, a:visited:after {
   content: '';
   height: 3px;
@@ -77,7 +67,7 @@ ul{
   bottom: 0;
   left: 0;
   width: 0%;
-  background: #069;
+  background: #0DF205;
   transition: 0.2s;
 }
 .events-list a:hover:after, a:visited:hover:after {
@@ -85,19 +75,8 @@ ul{
 }
   
 .events-list a:hover {
-    color: #0DF205;
+    color: #00F7EE;
     cursor: pointer;
-}
-.events-header h1{
-    font-size: 100px;
-    color: white;
-      
-}
-.events-header{
-    top: 10%;
-    left: 25%;
-    
-
 }
 
 /* Style the navbar */
@@ -113,8 +92,13 @@ ul{
     background-color: #892cff;
     display: flex;
     height: 5%;
-    font-size: 36px;
+    font-size: 20px;
     color: #fff;
+    align-items: center;
+}
+
+.fa, .fab, .fal, .far, .fas {
+  margin: 10px;
 }
 
 .foot-home a, .footer a {
@@ -409,8 +393,7 @@ input:valid~label {
     display: flex;
     flex-direction: row;
     height: 87%;
-    background: rgb(199,0,255);
-    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    background-color: #100F18;
     /* background-color: #0DF205; */
     /* justify-content: center;    */
     color: white;
@@ -536,10 +519,12 @@ input:valid~label {
   margin: 2%;
 }
 
-.event-show-header {
-  margin: 2%;
+.event-show-header, .events-header {
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
+  color: #100F18;
+  -webkit-text-stroke: 4px #00F7EE;
 }
 
 .event-show-header-info, .event-show-add-event {
@@ -576,10 +561,10 @@ input:valid~label {
 
 .event-show-body-right {
     font-size: 24px;
-    text-align: left;
-    line-height: 163%;
-    margin-right: 5%;
+    line-height: 30px;
+    margin-right: 1%;
     text-overflow: ellipsis;
+    text-align: justify;
 }
 
 .event-show-bottom {
@@ -589,7 +574,8 @@ input:valid~label {
   flex-wrap: wrap;
   align-content: space-around;
   align-items: center;
-  margin: 2%;
+  /* margin: 2%; */
+  width: 100%;
 }
 
 /* for the events in index page */
@@ -607,4 +593,38 @@ input:valid~label {
 @keyframes fadeout {
     0% { opacity: 100;}
     100% { opacity: 0;}
+}
+
+/* Style the navbar */
+.nav-not-logged, .nav-logged{
+  overflow: hidden;
+  background-color: rgba(16, 15, 24, 0.959);
+
+  /* background-color: #892cff; */
+  display: flex;
+  flex-direction: row-reverse;
+  height: 8%;
+}
+
+/* Navbar links */
+  .nav-not-logged a, .nav-logged a {
+  display: flex;
+  flex-direction: row-reverse;
+  /* align-content: center; */
+  align-items: center;
+  overflow: hidden;
+  /* background-color: #892cff; */
+  /* height: 8%; */
+  font-family: 'Raleway', san-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  padding-right: 30px;
+  text-decoration: none;
+}
+
+.nav-logged a:hover, .nav-not-logged a:hover {
+  color: #00F7EE;
+  cursor: pointer;
 }

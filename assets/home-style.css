@@ -20,14 +20,6 @@ html, body {
     height: 8%;
 }
 
-.footer, .foot-home {
-    background-color: #892cff;
-    display: flex;
-    height: 5%;
-    font-size: 36px;
-    color: #fff;
-}
-
 .foot-home a, .footer a {
     align-items: center;
     color: #fff;
@@ -72,7 +64,7 @@ html, body {
 }
     
     /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-    .sticky + .content {
+.sticky + .content {
     padding-top: 60px;
 }
 
@@ -142,9 +134,6 @@ html, body {
     display: flex;
     flex-direction: row;
     height: 92%;
-    background: rgb(199,0,255);
-    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
-    height: 100%;
     background-color: #100F18;
     justify-content: center;
 }

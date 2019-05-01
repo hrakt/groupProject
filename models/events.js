@@ -7,6 +7,7 @@ const eventSchema = mongoose.Schema({
     date: Date,
     venue: String,
     picture: String,
+    playlist: String,
     users: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
