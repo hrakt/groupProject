@@ -20,14 +20,6 @@ html, body {
     height: 8%;
 }
 
-.footer, .foot-home {
-    background-color: #892cff;
-    display: flex;
-    height: 5%;
-    font-size: 36px;
-    color: #fff;
-}
-
 .foot-home a, .footer a {
     align-items: center;
     color: #fff;
@@ -72,7 +64,7 @@ html, body {
 }
     
     /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-    .sticky + .content {
+.sticky + .content {
     padding-top: 60px;
 }
 
