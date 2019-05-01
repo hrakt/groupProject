@@ -1,27 +1,58 @@
 <%- include('../partials/header.ejs', {logged})%>
+    <div class="event-show-container">
+        
+        <div class="event-show-header">
+            <div class="header-title"> <h1 id="event-name"><%=events.name%></h1>
+                </div>
+                    <div class="event-show-add-event">
+                        <form action="/users/<%=events._id%>" method="POST">
+                        <% if (user &&!user.events.filter(e => e.toString() === events._id.toString()).length > 0) { %>
+                        <button>Add Event</button>
+                        <% } %>
+                        </form>
+                    </div>
+        </div>
+        
+        <div class="event-show-header-info">
+            <div class="event-header-venue">
+                <p>Venue</p><br />
+                <h2><%=events.venue%></h2>
+            </div>
+            <div class="event-header-date">
+                <p>Date</p><br />
+                <h2><span class="data"><%=events.date.toDateString()%></h2>
+            </div>
+            <div class="event-header-timer">
+                <p>Countdown</p><br />
+                <h2 id="countdown-timer"></h2>
+            </div> 
+        </div>
+        
+        <div class="event-show-body-container">
+            <div class="event-show-body-left">
+                <img src="<%=events.picture%>" class="event-picture">
+            </div>
+            <div class="event-show-body-middle">
+            <% if (events.name == 'Dominator') {%>
+            <iframe src="https://open.spotify.com/embed/user/artofdance/playlist/4XC3G8aSD9MvXAtJ6FqUt6&view=coverart&theme=white" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>  
+            <% } %>
+            </div>
+                <div class="event-show-body-right">
+                    <p>Lineup: <%=events.artists%></p>
+                </div>
+        </div>
 
-    <h1>Show Page for <%=events.name%></h1>
-    <ul>
-        <li>Lineup: <%=events.artists%></li>
-        <li>Date: <span class="data"><%=events.date%></span></li>
-        <li>Location: <%=events.venue%></li>
-        <li>Pictures: <%=events.picture%></li>
-    </ul>
-
-    <div class="dropdown">
-        <button class="dropbtn">Users attending(<%=attendees.length%>)</button>
-        <div class="dropdown-content">
+        <div class="event-show-bottom">
+            <button>Attending(<%=attendees.length%>)</button>
             <% for(let i=0;i<attendees.length;i++){%>
-                <a href="#"><%=attendees[i].firstName%></a>
-
+            <img src="<%=attendees[i].profilePic%>" width="50px">
             <%}%>
         </div>
     </div>
 
-    <h2>Countdown Timer</h2>
-    <p id="countdown-timer"></p> 
+    <script>
+        let musicDiv = document.querySelector('.event-show-body-middle')
 
-    <script> 
         let time = document.querySelector(".data").innerText
         time = time.toString().split("(").shift();
 
@@ -44,5 +75,11 @@
         // console.log(deadline);
         // let dead = document.querySelector(".deadline")
         // dead.innerText = deadline;
+        let curEventName = document.getElementById('event-name').innerHTML;
+        console.log(curEventName,",,,, this is events name")
+        if (curEventName !== 'Dominator'){
+            musicDiv.style.display = "none"
+        }
     </script> 
+    </div>
 <%- include('../partials/footer.ejs')%>

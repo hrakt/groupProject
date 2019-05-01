@@ -35,7 +35,11 @@ ul{
 }
 
 
+.event-container, .event-show-container{
+=======
+
 .event-container{
+
     background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
     display:flex;
     flex-direction: column;
@@ -523,6 +527,70 @@ input:valid~label {
     text-decoration: none;
     cursor: pointer;
   }
+
+.event-show-header-container, .event-show-body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 24px;
+  margin: 2%;
+}
+
+.event-show-header {
+  margin: 2%;
+  display: flex;
+  flex-direction: row;
+}
+
+.event-show-header-info, .event-show-add-event {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* align-content: space-around; */
+  align-items: center;
+}
+
+.event-show-header-info {
+  display: flex;
+  font-size: 18px;
+  flex-direction: row;
+  width: 75%;
+  text-align: center;
+}
+
+.event-header-venue, .event-header-date, .event-header-timer {
+  margin: 0 2%;
+}
+
+.event-show-body-left, .event-show-body-middle, .event-show-body-right {
+  flex: 1;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.event-show-body-left img {
+  max-height: 400px
+}
+
+.event-show-body-right {
+    font-size: 24px;
+    text-align: left;
+    line-height: 163%;
+    margin-right: 5%;
+    text-overflow: ellipsis;
+}
+
+.event-show-bottom {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+  margin: 2%;
+}
 
 /* for the events in index page */
 .events{
