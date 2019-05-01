@@ -37,6 +37,8 @@ function stickyNav() {
 }
 
 
+
+
 const exploreText = document.querySelector('.explore-static');
 const exploreImage = document.querySelector('.home-img-explore')
 

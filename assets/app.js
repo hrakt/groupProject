@@ -64,6 +64,13 @@ let openModal = () =>{
     }
 }
 
+const eventImage = document.querySelector('.event-show-body-left')
+const eventBody = document.querySelector('.event-show-body-container')
+
+eventBody.addEventListener('load', function(){
+    eventImage.style.animation = 'fadein 300ms linear 1';
+})
+
 // const searchButton = document.getElementById("search-button");
 
 // const search = () =>{

@@ -12,7 +12,9 @@ html, body {
 /* Style the navbar */
 .nav-not-logged, .nav-logged{
     overflow: hidden;
-    background-color: #892cff;
+    background-color: rgba(16, 15, 24, 0.959);
+
+    /* background-color: #892cff; */
     display: flex;
     flex-direction: row-reverse;
     height: 8%;
@@ -33,7 +35,7 @@ html, body {
 }
 
   /* Navbar links */
-  .nav-not-logged a, .nav-logged a {
+    .nav-not-logged a, .nav-logged a {
     display: flex;
     flex-direction: row-reverse;
     /* align-content: center; */
@@ -42,15 +44,16 @@ html, body {
     /* background-color: #892cff; */
     /* height: 8%; */
     font-family: 'Raleway', san-serif;
-    font-weight: 400;
-    font-size: 19px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
     color: #fff;
     padding-right: 30px;
     text-decoration: none;
 }
 
 .nav-logged a:hover, .nav-not-logged a:hover {
-    color: #0DF205;
+    color: #00F7EE;
     cursor: pointer;
 }
 
@@ -77,9 +80,9 @@ html, body {
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     border: none;
     border-radius: -6px;
-    height: 125px;
-    width: 500px;
-    font-size: 36px;
+    height: 55px;
+    width: 191px;
+    font-size: 27px;
     margin-left: auto;
     font-family: 'Raleway', san-serif;
 }
@@ -94,7 +97,9 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    /* margin-top: 3%; */
+    /* margin-left: 2.5px; */
+    background-color: #1D1B1E;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -136,9 +141,13 @@ html, body {
 .home-container {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 92%;
     background: rgb(199,0,255);
     background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    height: 100%;
+    /* background: rgb(199,0,255);
+    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%); */
+    background-color: #100F18;
     /* background-color: #0DF205; */
     justify-content: center;
 }
@@ -146,11 +155,12 @@ html, body {
 .explore-h1, .your-h1, .else-h1 {
     opacity: 0;
     text-align: left;
+    letter-spacing: 12px;
     /* border: #fff solid 4px; */
     color: #fff;
     display: flex;
     flex-direction: column;
-    font-size: 60px;
+    font-size: 55px;
     font-family: 'Montserrat', san-serif;
     /* justify-content: center; */
 }
@@ -183,8 +193,9 @@ html, body {
 }
 
 .explore-static h1:hover, .your-static h1:hover, .else-static h1:hover {
-    color: limegreen;
-    text-decoration: line-through;
+    color: #100F18;
+    -webkit-text-stroke: 4px #00F7EE;
+    /* text-decoration: line-through; */
     cursor: pointer;
 }
 
@@ -197,23 +208,26 @@ html, body {
 .explore-static, .your-static, .else-static,
 .home-bottom-text {
     text-align: left;
+    letter-spacing: 12px;
     color: #fff;
     display: flex;
     flex-direction: column;
-    font-size: 60px;
+    font-size: 55px;
     font-family: 'Montserrat', san-serif;
 }
 
 .home-bottom-text {
     text-align: right;
     flex: 1;
-    color: limegreen;
+    color: #100F18;
     /* align-content: center; */
     /* align-items: center; */
-    font-size: 60px;
-    margin-top: -15%;
+    font-size: 39px !important;
+    letter-spacing: 2px !important;
+    margin-top: -18%;
     margin-right: 6%;
     font-family: 'Montserrat', san-serif;
+    -webkit-text-stroke: 2px limegreen;
 }
 
 .sign-up-but {
@@ -230,7 +244,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: -10%;
+    margin-left: -32%;
 }
 
 .home-img-container img {
@@ -261,7 +275,7 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 85%;
-    background: #000;
+    background: #100F18;
     /* background: rgb(94, 255, 0); */
     /* background: linear-gradient(11deg, rgba(25,245,11,1) 0%, rgba(6,172,46,1) 26%, rgba(108,57,255,1 ) 57%, rgba(199,0,255,1 ) 100%); */
     /* background-color: #0DF205; */
@@ -277,7 +291,7 @@ html, body {
     flex-direction: row;
     /* margin-top: -80px; */
     /* margin: 10px; */
-    margin-top: -100px;
+    margin-top: -45px;
     /* padding: 10px; */
     justify-content: center;
     z-index: 2;

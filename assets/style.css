@@ -35,7 +35,11 @@ ul{
 }
 
 
+.event-container, .event-show-container{
+=======
+
 .event-container{
+
     background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
     display:flex;
     flex-direction: column;
@@ -159,14 +163,61 @@ ul{
   /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
   .sticky + .content {
     padding-top: 60px;
-  }
+}
+
+
+
 
 
 /* Register page */
+
+.register-gradient {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.register-gradient:after, .register-gradient:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  content: "";
+  z-index: -1;
+}
+
+.register-gradient:after {
+  background: radial-gradient(circle, red, transparent);
+  animation: colorSpin 12s linear infinite;
+}
+
+.register-gradient:before {
+  background-color: yellow;
+}
+
+@keyframes colorSpin {
+  25% {
+    transform: translateY(-75%);
+  }
+  50% {
+    transform: translate(-75%, -75%);
+  }
+  75% {
+    transform: translate(-75%, 0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 .register-page {
     display: flex;
     height: 100%;
-    background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%);
+    /* background: linear-gradient(11deg, rgba(199,0,255,1) 0%, rgba(108,57,255,1) 26%, rgba(6,172,46,1) 57%, rgba(25,245,11,1) 100%); */
 }
 
 .register-container {
@@ -255,6 +306,7 @@ input:valid~label {
 
 
 .register-btn:hover { 
+    background: linear-gradient(180deg, #A777E3, #6E8EFB);
     color: white;
     cursor: pointer;
 }
@@ -475,6 +527,70 @@ input:valid~label {
     text-decoration: none;
     cursor: pointer;
   }
+
+.event-show-header-container, .event-show-body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 24px;
+  margin: 2%;
+}
+
+.event-show-header {
+  margin: 2%;
+  display: flex;
+  flex-direction: row;
+}
+
+.event-show-header-info, .event-show-add-event {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* align-content: space-around; */
+  align-items: center;
+}
+
+.event-show-header-info {
+  display: flex;
+  font-size: 18px;
+  flex-direction: row;
+  width: 75%;
+  text-align: center;
+}
+
+.event-header-venue, .event-header-date, .event-header-timer {
+  margin: 0 2%;
+}
+
+.event-show-body-left, .event-show-body-middle, .event-show-body-right {
+  flex: 1;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.event-show-body-left img {
+  max-height: 400px
+}
+
+.event-show-body-right {
+    font-size: 24px;
+    text-align: left;
+    line-height: 163%;
+    margin-right: 5%;
+    text-overflow: ellipsis;
+}
+
+.event-show-bottom {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+  margin: 2%;
+}
 
 /* for the events in index page */
 .events{
